@@ -1,6 +1,6 @@
 # Site settings hope it will do the job
-title: Jekyll-Uno
-description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll'
+title: Venkata R. Sundaragiri
+description: 'SAP Trasnformation Specialist, AI enthusiast, Seasonal SAP Consultant, and Blogger'
 url: 'http://joshgerdes.com/jekyll-uno'
 baseurl: '/jekyll-uno'
 # google_analytics: 'UA-XXXXXX-X'
@@ -8,12 +8,12 @@ baseurl: '/jekyll-uno'
 disable_landing_page: true
 
 author:
-  name: 'Josh Gerdes'
-  email: josh@joshgerdes.com
-  twitter_username: joshgerdes
-  facebook_username: joshgerdes
-  github_username:  joshgerdes
-  linkedin_username:  joshgerdes
+  name: 'Venkata R Sundaragiri'
+  email: sundaragiriv@gmail.com
+  twitter_username: @sundaragiriv
+  facebook_username: 
+  github_username:  sundaragiriv
+  linkedin_username:  sundaragiri
 
 defaults:
   -
