@@ -1,8 +1,8 @@
 # Site settings hope it will do the job
 title: Venkata R. Sundaragiri
 description: 'SAP Trasnformation Specialist, AI enthusiast, Seasonal SAP Consultant, and Blogger'
-url: 'http://joshgerdes.com/jekyll-uno'
-baseurl: '/venkata.info'
+url: 'https://venkata.info'
+baseurl: ""
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 disable_landing_page: true
