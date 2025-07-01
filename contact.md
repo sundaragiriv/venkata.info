@@ -21,4 +21,4 @@ I'm always open to discussing new projects, collaboration opportunities, or simp
     <input type="submit" value="Send">
 </form>
 
-<p style="margin-top: 20px;">You can also find me on <a href="https://www.linkedin.com/in/sundaragri target="_blank">LinkedIn</a>.</p>
+<p style="margin-top: 20px;">You can also find me on <a href="https://www.linkedin.com/in/sundaragri" target="_blank">LinkedIn</a>.</p>
