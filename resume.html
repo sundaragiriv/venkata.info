@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Resume | Venkata Sundaragiri</title>
+    <meta name="description" content="Detailed resume summary of Venkata Sundaragiri, SAP and AI expert">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/main.css">
     <style>
         body {
@@ -14,28 +16,46 @@
         }
         
         .resume-wrapper {
-            max-width: 900px;
+            max-width: 960px;
             margin: 4rem auto;
-            background: white;
+            background: #ffffff;
             padding: 2rem 3rem;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
             border-radius: 8px;
             color: #1F2937;
-            font-family: 'Yanone Kaffeesatz', sans-serif;
+        }
+        
+        .resume-wrapper h1,
+        .resume-wrapper h2 {
+            color: #4B0082;
+        }
+        
+        .resume-wrapper h1 {
+            font-size: 2.2em;
+            margin-bottom: 1rem;
         }
         
         .resume-wrapper h2 {
-            color: #1E3A8A;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
+            font-size: 1.6em;
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
         }
         
         .resume-wrapper ul {
             padding-left: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         .resume-wrapper li {
             margin-bottom: 0.5rem;
+        }
+        
+        .resume-wrapper strong {
+            display: block;
+            margin-top: 1.5rem;
+            color: #1E3A8A;
+            font-size: 1.2em;
         }
         
         .note {
@@ -43,14 +63,39 @@
             color: #4B0082;
             margin-top: 2rem;
             text-align: center;
+            font-size: 1.1em;
+        }
+        
+        .note a {
+            color: #1E3A8A;
+            text-decoration: underline;
+        }
+        
+        .note a:hover {
+            color: #4B0082;
         }
     </style>
 </head>
 
 <body>
+
+    <!-- Header -->
+    <div id="header">
+        <div class="container">
+            <h1><a href="index.html">venkata.info</a></h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="resume.html">Resume</a>
+                <a href="skills.html">Skills</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Resume Content -->
     <section class="resume-wrapper">
         <h1>Professional Summary: Venkata Sundaragiri</h1>
-
         <p>A Senior SAP Consultant with 23+ years of experience specializing in:</p>
         <ul>
             <li>SAP Customer Experience (CX) Cloud applications (Sales Cloud V2, Service Cloud V2, C4C)</li>
@@ -106,6 +151,14 @@
 
         <p class="note">For a copy of my full, up-to-date resume, please <a href="mailto:sundaragiriv@gmail.com">contact me directly</a>.</p>
     </section>
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container">
+            <p>&copy; 2025 Venkata R. Sundaragiri</p>
+        </div>
+    </div>
+
 </body>
 
 </html>

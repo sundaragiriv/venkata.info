@@ -4,23 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact | Venkata Sundaragiri</title>
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/main.css">
     <meta name="description" content="Contact Venkata Sundaragiri – SAP Architect, AI & CX Expert">
     <meta property="og:title" content="Contact | Venkata Sundaragiri">
     <meta property="og:description" content="Get in touch with Venkata for consulting, speaking, or collaboration">
     <meta property="og:image" content="https://venkata.info/assets/images/og-image.jpg">
     <meta property="og:url" content="https://venkata.info/contact.html">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/main.css">
     <style>
         .contact-section {
             max-width: 900px;
             margin: 4rem auto;
-            background: white;
+            background: #ffffff;
             padding: 2rem 3rem;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            font-family: 'Yanone Kaffeesatz', sans-serif;
-            color: #1F2937;
         }
         
         .contact-section h1 {
@@ -40,7 +38,6 @@
             font-size: 1.2rem;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-family: 'Yanone Kaffeesatz', sans-serif;
         }
         
         .contact-form button {
@@ -65,10 +62,15 @@
         .alt-contact a {
             color: #1E3A8A;
         }
+        
+        .alt-contact a:hover {
+            color: #4B0082;
+        }
     </style>
 </head>
 
 <body>
+    <!-- Header -->
     <div id="header">
         <div class="container">
             <h1><a href="index.html">venkata.info</a></h1>
@@ -82,6 +84,7 @@
         </div>
     </div>
 
+    <!-- Contact Section -->
     <section class="contact-section">
         <h1>Contact Me</h1>
         <form class="contact-form" name="contact" method="POST" data-netlify="true">
@@ -91,11 +94,13 @@
             <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
+
         <div class="alt-contact">
             Or email me directly at <a href="mailto:sundaragiri@gmail.com">sundaragiri@gmail.com</a><br> LinkedIn: <a href="https://linkedin.com/in/sundaragiri" target="_blank">linkedin.com/in/sundaragiri</a>
         </div>
     </section>
 
+    <!-- Footer -->
     <div id="footer">
         <div class="container">
             <p>&copy; 2025 Venkata R. Sundaragiri</p>
