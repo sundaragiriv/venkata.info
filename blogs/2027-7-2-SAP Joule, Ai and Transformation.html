@@ -1,0 +1,637 @@
+<!-- Chosen Palette: Calm Harmony with Muted Greens -->
+<!-- Application Structure Plan: The SPA is structured into thematic, scrollable sections: Executive Summary, SAP CX Foundation, SAP Joule Introduction, The Synergy, and Real-World Impact. This structure was chosen to guide the user through the core concepts in a logical progression, building understanding from foundational elements to combined impact and practical applications. Key interactions include collapsible sections for detailed use cases, allowing users to drill down into specific AI agent benefits on demand, and dynamic charts for visualizing quantitative data. This approach enhances user exploration and understanding by presenting information in digestible, interactive chunks rather than a flat, linear report. -->
+<!-- Visualization & Content Choices:
+    - Executive Summary: Key stats (80% AI-driven, 35% CSAT increase) presented as large, bold text for immediate impact (Goal: Inform; Method: HTML/CSS; Interaction: None; Justification: High-level overview).
+    - SAP CX Foundation: Core areas (Commerce, Customer Data, Marketing, Sales, Service) presented as a simple, connected flow diagram using HTML/CSS/Tailwind for visual relationships (Goal: Organize; Method: HTML/CSS; Interaction: None; Justification: Shows interconnectedness without complex graphics).
+    - SAP Joule Introduction: Key features presented as a grid of cards with Unicode icons (Goal: Inform; Method: HTML/CSS; Interaction: None; Justification: Visually highlights distinct features).
+    - Human + AI Partnership: Existing flow diagram refined for new palette (Goal: Organize; Method: HTML/CSS; Interaction: None; Justification: Clear process flow).
+    - Synergy - Performance Metrics: Bar chart for Sales Efficiency, Customer Satisfaction, Service Time Reduction (Goal: Compare; Method: Chart.js/Canvas; Interaction: Tooltip; Justification: Effective for comparing magnitudes).
+    - Real-World Impact - FTEs Saved: Bar chart for FTEs saved by AI agents (Goal: Compare; Method: Chart.js/Canvas; Interaction: Tooltip; Justification: Clear comparison of savings across categories).
+    - Real-World Impact - Lead-to-Cash Agents: Replaced Table 3 with interactive accordion/collapsible sections for each use case (Goal: Organize/Inform; Method: HTML/CSS/JavaScript; Interaction: Click to expand/collapse; Justification: Allows user-driven exploration of detailed benefits without overwhelming the page).
+    - Customer Success Stories: Donut charts for Sharks Sports & Entertainment and Ferrara Candy Company (Goal: Inform/Compare; Method: Chart.js/Canvas; Interaction: Tooltip; Justification: Visually represents proportions of success).
+CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Transformation in Customer Experience</title>
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <script src="[https://cdn.jsdelivr.net/npm/chart.js](https://cdn.jsdelivr.net/npm/chart.js)"></script>
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap)" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F8F8;
+            color: #333333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            max-height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .accent-text {
+            color: #4A7C59;
+        }
+        .bg-accent {
+            background-color: #4A7C59;
+        }
+        .border-accent {
+            border-color: #4A7C59;
+        }
+        .text-accent-light {
+            color: #87BBA2;
+        }
+        .bg-accent-light {
+            background-color: #87BBA2;
+        }
+        .accordion-header {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .accordion-header:hover {
+            background-color: #F0F0F0;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        .accordion-content.open {
+            max-height: 500px; /* Arbitrary large value to allow content to expand */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-black text-stone-800 tracking-tight">Redefining Customer Experience</h1>
+            <p class="mt-4 text-xl md:text-2xl font-bold accent-text">The AI Transformation with SAP CX and Joule</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="executive-summary" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-stone-800">Executive Summary: Vision for an AI-Powered CX Future</h2>
+                <p class="max-w-3xl mx-auto mt-2 text-stone-600">The business landscape demands anticipation, automation, and hyper-personalization. This section highlights the transformative power of SAP CX, SAP Joule, and strategic AI, creating an intelligent enterprise that consistently surpasses customer expectations.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center justify-center">
+                    <p class="text-6xl font-black accent-text">80%</p>
+                    <p class="mt-2 text-lg text-stone-600">of customer interactions expected to be AI-driven by 2025.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center justify-center">
+                    <p class="text-6xl font-black accent-text">+17%</p>
+                    <p class="mt-2 text-lg text-stone-600">increase in customer satisfaction reported by mature AI adopters.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sap-cx-foundation" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-stone-800">SAP Customer Experience (CX): The Unified Foundation</h2>
+                <p class="max-w-3xl mx-auto mt-2 text-stone-600">SAP CX unifies disparate processes and data streams, providing a comprehensive 360-degree customer view. Its cloud-native architecture ensures scalability and adaptability, forming the essential prerequisite for effective AI.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-xl font-bold text-stone-700 mb-4 text-center">Core Areas of SAP CX</h3>
+                <p class="text-stone-600 mb-6 text-center">SAP CX integrates five critical areas to manage the entire customer journey, linking all customer-relevant data and processes.</p>
+                <div class="flex flex-col items-center justify-center space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-32 h-16 bg-accent-light rounded-lg flex items-center justify-center text-stone-900 font-semibold text-sm shadow">Commerce</div>
+                        <div class="w-8 h-1 bg-accent-light rounded-full"></div>
+                        <div class="flex-shrink-0 w-32 h-16 bg-accent-light rounded-lg flex items-center justify-center text-stone-900 font-semibold text-sm shadow">Customer Data</div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-1 h-8 bg-accent-light rounded-full"></div>
+                        <div class="w-1 h-8 bg-accent-light rounded-full"></div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-32 h-16 bg-accent-light rounded-lg flex items-center justify-center text-stone-900 font-semibold text-sm shadow">Marketing</div>
+                        <div class="w-8 h-1 bg-accent-light rounded-full"></div>
+                        <div class="flex-shrink-0 w-32 h-16 bg-accent-light rounded-lg flex items-center justify-center text-stone-900 font-semibold text-sm shadow">Sales</div>
+                    </div>
+                    <div class="w-1 h-8 bg-accent-light rounded-full"></div>
+                    <div class="flex-shrink-0 w-32 h-16 bg-accent-light rounded-lg flex items-center justify-center text-stone-900 font-semibold text-sm shadow">Service</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="sap-joule-introduction" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-stone-800">Introducing SAP Joule: The Intelligent Copilot</h2>
+                <p class="max-w-3xl mx-auto mt-2 text-stone-600">SAP Joule is a generative AI copilot natively integrated into the SAP ecosystem, engineered to comprehend specific business contexts and deliver proactive, contextual insights where work is performed.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-xl font-bold text-stone-700 mb-4 text-center">Key Features of SAP Joule</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-4 bg-neutral-50 rounded-lg shadow-sm flex items-center space-x-3">
+                        <span class="text-3xl accent-text">💡</span>
+                        <div>
+                            <h4 class="font-semibold text-stone-800">Contextual Recommendations</h4>
+                            <p class="text-sm text-stone-600">Tailored insights based on real-time business context.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg shadow-sm flex items-center space-x-3">
+                        <span class="text-3xl accent-text">⚙️</span>
+                        <div>
+                            <h4 class="font-semibold text-stone-800">Process Automation Support</h4>
+                            <p class="text-sm text-stone-600">Automates tasks and approvals, reducing manual effort.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg shadow-sm flex items-center space-x-3">
+                        <span class="text-3xl accent-text">💬</span>
+                        <div>
+                            <h4 class="font-semibold text-stone-800">Natural Language Queries</h4>
+                            <p class="text-sm text-stone-600">Find answers and trigger actions using conversational language.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg shadow-sm flex items-center space-x-3">
+                        <span class="text-3xl accent-text">📊</span>
+                        <div>
+                            <h4 class="font-semibold text-stone-800">Data-Driven Decision Assistance</h4>
+                            <p class="text-sm text-stone-600">Analyzes complex datasets for faster, informed decisions.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg shadow-sm flex items-center space-x-3">
+                        <span class="text-3xl accent-text">🔗</span>
+                        <div>
+                            <h4 class="font-semibold text-stone-800">Cross-Application Collaboration</h4>
+                            <p class="text-sm text-stone-600">Seamlessly connects insights and actions across SAP solutions.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg shadow-sm flex items-center space-x-3">
+                        <span class="text-3xl accent-text">🔒</span>
+                        <div>
+                            <h4 class="font-semibold text-stone-800">Secure and Scalable AI</h4>
+                            <p class="text-sm text-stone-600">Built with enterprise-grade security and compliance standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="synergy" class="mb-12">
+             <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-stone-800">The Synergy: SAP CX, Joule, and AI Transformation</h2>
+                <p class="max-w-3xl mx-auto mt-2 text-stone-600">The convergence of SAP CX and Joule, powered by advanced AI, redefines customer experience, enabling a proactive, hyper-personalized, and human-amplified future.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-stone-700 mb-4">Accelerated Business Performance</h3>
+                    <p class="text-stone-600 mb-4">Integrated AI delivers measurable improvements in efficiency and satisfaction by optimizing core processes across sales, service, and customer satisfaction.</p>
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                     <h3 class="text-xl font-bold text-stone-700 mb-4">The Human + AI Partnership</h3>
+                     <p class="text-stone-600 mb-4">Joule automates routine work, empowering your team to focus on high-value, strategic, and empathetic customer interactions, transforming the workforce.</p>
+                     <div class="space-y-4 mt-8 flex flex-col items-center">
+                        <div class="bg-neutral-100 text-stone-700 p-3 rounded-lg w-full max-w-md text-center shadow">Repetitive & Routine Tasks</div>
+                        <div class="text-2xl font-bold text-stone-500">↓</div>
+                        <div class="bg-accent-light text-stone-900 p-3 rounded-lg w-full max-w-md text-center shadow flex items-center justify-center"><span class="text-2xl mr-2">🤖</span> Joule AI Automation</div>
+                        <div class="text-2xl font-bold text-stone-500">↓</div>
+                        <div class="bg-neutral-100 text-stone-700 p-3 rounded-lg w-full max-w-md text-center shadow">Employee Time Freed Up</div>
+                         <div class="text-2xl font-bold text-stone-500">↓</div>
+                        <div class="bg-neutral-100 text-stone-700 p-3 rounded-lg w-full max-w-md text-center shadow">Focus on Strategic & Empathetic Work</div>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="real-world-impact" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-stone-800">Real-World Impact: Optimizing Lead-to-Cash</h2>
+                <p class="max-w-3xl mx-auto mt-2 text-stone-600">SAP Joule AI agents deliver tangible ROI by automating and enhancing the entire lead-to-cash lifecycle, recovering revenue, improving cash flow, and saving thousands of work hours.</p>
+            </div>
+             <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                <h3 class="text-xl font-bold text-stone-700 mb-4">FTEs Saved by AI Agent Automation</h3>
+                <p class="text-stone-600 mb-4">This chart illustrates the estimated Full-Time Equivalents (FTEs) saved annually by implementing Joule AI agents for various financial and sales processes, showcasing the efficiency gains.</p>
+                <div class="chart-container">
+                    <canvas id="agentImpactChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-xl font-bold text-stone-700 mb-4">Explore AI Agent Use Cases</h3>
+                <p class="text-stone-600 mb-6">Click on each use case to learn how SAP AI agents address specific challenges and deliver quantifiable benefits in Lead-to-Cash processes.</p>
+
+                <div id="accordion-container" class="space-y-3">
+                    <!-- Accordion items will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="customer-success" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-stone-800">Proven Customer Success Stories</h2>
+                <p class="max-w-3xl mx-auto mt-2 text-stone-600">Leading brands are achieving remarkable results by leveraging AI-powered SAP CX solutions to deliver next-generation customer experiences and drive significant business growth.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-center lg:col-span-1">
+                    <h3 class="text-xl font-bold text-stone-700">Online Metals</h3>
+                    <p class="text-6xl my-4 font-black accent-text">2x</p>
+                    <p class="text-stone-600">revenue growth over three years by enhancing B2B e-commerce and marketing with SAP CX.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-stone-700 mb-4 text-center">Sharks Sports & Entertainment</h3>
+                    <p class="text-stone-600 mb-4 text-center">Achieved a significant year-over-year revenue increase from their holiday campaigns by delivering timely messages.</p>
+                    <div class="chart-container h-64 md:h-64">
+                        <canvas id="sharksChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-stone-700 mb-4 text-center">Ferrara Candy Company</h3>
+                    <p class="text-stone-600 mb-4 text-center">Dramatically grew their marketing reach and engagement after adopting SAP solutions.</p>
+                    <div class="chart-container h-64 md:h-64">
+                        <canvas id="ferraraChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-800 text-white mt-12">
+        <div class="container mx-auto p-6 text-center">
+            <p class="font-bold">Build a Future-Ready, Intelligent Enterprise</p>
+            <p class="text-stone-300 mt-2 text-sm">Embrace the AI transformation with SAP CX and Joule to unlock unparalleled agility and create customers for life.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const palette = {
+                primaryAccent: '#4A7C59',
+                secondaryAccent: '#87BBA2',
+                tertiaryAccent: '#B8D8C2',
+                neutralBackground: '#F8F8F8',
+                neutralLight: '#E0E0E0',
+                neutralDark: '#333333',
+                neutralMedium: '#666666',
+                white: '#FFFFFF',
+            };
+            
+            function wrapLabel(str, maxWidth) {
+                if (str.length <= maxWidth) {
+                    return str;
+                }
+                const words = str.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            }
+
+            const mandatoryTooltipOptions = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            const performanceCtx = document.getElementById('performanceChart');
+            if(performanceCtx) {
+                new Chart(performanceCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Sales Efficiency', 'Customer Satisfaction', 'Service Time Reduction'],
+                        datasets: [{
+                            label: 'Maximum Improvement (%)',
+                            data: [40, 35, 50],
+                            backgroundColor: [palette.primaryAccent, palette.secondaryAccent, palette.tertiaryAccent],
+                            borderColor: [palette.primaryAccent, palette.secondaryAccent, palette.tertiaryAccent],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        ...mandatoryTooltipOptions,
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        indexAxis: 'y',
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: palette.neutralLight
+                                },
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%'
+                                    },
+                                    color: palette.neutralDark
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    color: palette.neutralDark
+                                }
+                            }
+                        },
+                        plugins: {
+                            ...mandatoryTooltipOptions.plugins,
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+
+            const agentImpactCtx = document.getElementById('agentImpactChart');
+            if(agentImpactCtx) {
+                const agentLabels = [
+                    'Customer Late Payment Management',
+                    'Automated Billing Document Creation',
+                    'Automated Customer Invoice Clearing',
+                    'Automated Sales Document Creation',
+                    'Shipped Not Billed Items',
+                    'Rejected Sales Document Analysis',
+                    'Unearned Cash Discount Reclamation'
+                ];
+                
+                new Chart(agentImpactCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: agentLabels.map(label => wrapLabel(label, 18)),
+                        datasets: [{
+                            label: 'Max FTEs Saved',
+                            data: [3, 4, 3, 3, 2, 2, 2],
+                            backgroundColor: [
+                                palette.primaryAccent,
+                                palette.secondaryAccent,
+                                palette.tertiaryAccent,
+                                palette.primaryAccent,
+                                palette.secondaryAccent,
+                                palette.tertiaryAccent,
+                                palette.primaryAccent
+                            ],
+                            borderColor:  [
+                                palette.primaryAccent,
+                                palette.secondaryAccent,
+                                palette.tertiaryAccent,
+                                palette.primaryAccent,
+                                palette.secondaryAccent,
+                                palette.tertiaryAccent,
+                                palette.primaryAccent
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                         ...mandatoryTooltipOptions,
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                             x: {
+                                ticks: {
+                                    stepSize: 1,
+                                    color: palette.neutralDark
+                                },
+                                grid: {
+                                    color: palette.neutralLight
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    color: palette.neutralDark
+                                }
+                            }
+                        },
+                         plugins: {
+                             ...mandatoryTooltipOptions.plugins,
+                             legend: {
+                                 display: false
+                             }
+                         }
+                    }
+                });
+            }
+
+            const sharksCtx = document.getElementById('sharksChart');
+            if(sharksCtx) {
+                new Chart(sharksCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Holiday Campaign Revenue Increase', 'Other Revenue'],
+                        datasets: [{
+                            data: [30, 70],
+                            backgroundColor: [palette.primaryAccent, palette.neutralLight],
+                            borderColor: [palette.primaryAccent, palette.neutralLight],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        ...mandatoryTooltipOptions,
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            ...mandatoryTooltipOptions.plugins,
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    color: palette.neutralDark
+                                }
+                            },
+                             title: {
+                                display: true,
+                                text: '30% YoY Revenue Increase',
+                                font: {
+                                    size: 16,
+                                    weight: 'bold',
+                                    color: palette.neutralDark
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            const ferraraCtx = document.getElementById('ferraraChart');
+            if(ferraraCtx) {
+                new Chart(ferraraCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Increase in Contactable Consumers', 'Previous Base'],
+                        datasets: [{
+                            data: [59, 100],
+                            backgroundColor: [palette.secondaryAccent, palette.neutralLight],
+                            borderColor: [palette.secondaryAccent, palette.neutralLight],
+                            borderWidth: 1
+                        }]
+                    },
+                     options: {
+                        ...mandatoryTooltipOptions,
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            ...mandatoryTooltipOptions.plugins,
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    color: palette.neutralDark
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: '59% Increase in Consumer Reach',
+                                font: {
+                                    size: 16,
+                                    weight: 'bold',
+                                    color: palette.neutralDark
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const accordionData = [
+                {
+                    title: 'Shipped Not Billed Items',
+                    challenge: 'Goods delivered but not invoiced, delaying cash flow.',
+                    action: 'Cross-checks shipping & billing data to identify gaps.',
+                    benefits: 'Unlocks $100K–$1M unbilled revenue; saves ~1–2 FTEs.'
+                },
+                {
+                    title: 'Automated Billing Document Creation',
+                    challenge: 'Manual effort in converting sales orders to invoices.',
+                    action: 'Converts confirmed sales orders to billing documents automatically.',
+                    benefits: 'Reduces manual workload by 10–20%; saves ~2–4 FTEs.'
+                },
+                {
+                    title: 'Customer Late Payment Management',
+                    challenge: 'Impact of late customer payments on cash flow.',
+                    action: 'Tracks due dates, sends proactive reminders, schedules follow-ups.',
+                    benefits: 'Improves cash flow by 1–2% (e.g., $1M–$2M on $100M AR); saves ~2–3 FTEs.'
+                },
+                {
+                    title: 'Automated Customer Invoice Clearing',
+                    challenge: 'Manual matching of payments to invoices.',
+                    action: 'Automates matching payments to invoices using references.',
+                    benefits: '10–30% faster payment reconciliation; saves ~2–3 FTEs.'
+                },
+                {
+                    title: 'Rejected Sales Document Analysis',
+                    challenge: 'Recurring issues leading to rejected sales orders.',
+                    action: 'Analyzes rejected orders to pinpoint root causes.',
+                    benefits: 'Recovers 1–2% of potential sales; saves ~1–2 FTEs.'
+                },
+                {
+                    title: 'Automated Sales Document Creation',
+                    challenge: 'Manual effort in generating sales orders.',
+                    action: 'Automatically generates sales orders from historical data.',
+                    benefits: '10–20% faster order processing; saves ~2–3 FTEs.'
+                },
+                {
+                    title: 'Unearned Cash Discount Reclamation',
+                    challenge: 'Unauthorized early payment discounts taken by customers.',
+                    action: 'Compares payment timings with contractual discount rules.',
+                    benefits: 'Reclaims 0.5–1% of invoice value; saves ~1–2 FTEs.'
+                },
+                {
+                    title: 'Sales Payment Terms Discrepancy',
+                    challenge: 'Inconsistencies in payment terms across transactions.',
+                    action: 'Cross-verifies payment terms in sales transactions.',
+                    benefits: 'Improves cash flow by 0.5–1%; saves ~1–2 FTEs.'
+                },
+                {
+                    title: 'Late Goods Issue Monitoring',
+                    challenge: 'Delays in delivering goods disrupting cash flow.',
+                    action: 'Monitors warehouse operations and order timelines.',
+                    benefits: 'Minimizes shipping delays ($100K–$500K improved cash flow); saves ~1–2 FTEs.'
+                },
+                {
+                    title: 'Overdue Customer Invoices Management',
+                    challenge: 'Bad debt and late payment risks.',
+                    action: 'Monitors overdue invoices, prioritizes follow-ups.',
+                    benefits: 'Enhances cash flow, reduces bad debt risk; saves ~1–2 FTEs.'
+                }
+            ];
+
+            const accordionContainer = document.getElementById('accordion-container');
+            if (accordionContainer) {
+                accordionData.forEach((item, index) => {
+                    const accordionItem = document.createElement('div');
+                    accordionItem.className = 'border border-neutral-200 rounded-lg shadow-sm overflow-hidden';
+
+                    const header = document.createElement('div');
+                    header.className = 'accordion-header p-4 bg-neutral-50 flex justify-between items-center text-stone-800 font-semibold';
+                    header.innerHTML = `<span>${item.title}</span><span class="text-xl transform transition-transform duration-300">▼</span>`;
+                    header.setAttribute('data-index', index);
+
+                    const content = document.createElement('div');
+                    content.className = 'accordion-content p-4 text-stone-600 bg-white';
+                    content.innerHTML = `
+                        <p class="mb-2"><strong class="text-stone-700">Challenge:</strong> ${item.challenge}</p>
+                        <p class="mb-2"><strong class="text-stone-700">Agent's Action:</strong> ${item.action}</p>
+                        <p><strong class="text-stone-700">Estimated Benefits/ROI:</strong> ${item.benefits}</p>
+                    `;
+
+                    accordionItem.appendChild(header);
+                    accordionItem.appendChild(content);
+                    accordionContainer.appendChild(accordionItem);
+                });
+
+                accordionContainer.querySelectorAll('.accordion-header').forEach(header => {
+                    header.addEventListener('click', function() {
+                        const content = this.nextElementSibling;
+                        const arrow = this.querySelector('span:last-child');
+                        
+                        const isOpen = content.classList.contains('open');
+
+                        // Close all others
+                        accordionContainer.querySelectorAll('.accordion-content').forEach(c => {
+                            if (c !== content) {
+                                c.classList.remove('open');
+                                c.previousElementSibling.querySelector('span:last-child').classList.remove('rotate-180');
+                            }
+                        });
+
+                        // Toggle current
+                        content.classList.toggle('open');
+                        arrow.classList.toggle('rotate-180', !isOpen);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+```
