@@ -1,30 +1,158 @@
----
-layout: default
-robots: noindex
----
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="main-post-list">
+<head>
+    <meta charset="UTF-8">
+    <title>Venkata Sundaragiri | SAP Architect & AI Consultant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <meta name="description" content="SAP Architect, AI Strategist, and CX Leader. Explore my work, skills, and insights.">
+</head>
 
-  <ol class="post-list">
-    {% for post in paginator.posts %}
-      <li>
-        <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-        <p class="excerpt">{{ post.excerpt | strip_html }}&hellip;</p>
-        <div class="post-list__meta">
-            <time datetime="{{ post.date | date: "%Y-%m-%d %H:%M" }}" class="post-list__meta--date date">{{ post.date | date: "%-d %b %Y" }}</time>
-            {% if post.tags.size > 0 %}
-            &#8226; <span class="post-meta__tags">on {% for tag in post.tags %}<a href="{{ site.baseurl }}/tags/#{{ tag }}">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}</span>
-            {% endif %}
+<body>
+
+    <!-- Header -->
+    <section id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1><a href="index.html" id="logo">venkata.info</a></h1>
+                    <nav id="nav">
+                        <a href="index.html">Home</a>
+                        <a href="resume.html">Resume</a>
+                        <a href="skills.html">Skills</a>
+                        <a href="blogs.html">Tech Blog</a>
+                        <a href="personal.html">Veda & Life</a>
+                        <a href="contact.html">Contact</a>
+                    </nav>
+                </div>
+            </div>
         </div>
-        <hr class="post-list__divider">
-      </li>
-    {% endfor %}
-  </ol>
+        <div id="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-12-medium">
+                        <p style="font-size: 2rem; line-height: 1.4;">
+                            👋 Welcome! I’m <strong>Venkata Sundaragiri</strong><br> A SAP Architect & AI Strategist crafting enterprise solutions.
+                        </p>
+                        <a href="resume.html" class="button-large">View My Resume</a>
+                    </div>
+                    <div class="col-6 col-12-medium imp-medium">
+                        <a href="#" class="bordered-feature-image">
+                            <img src="assets/images/banner.jpg" alt="Venkata Sundaragiri">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <hr class="post-list__divider ">
+    <!-- Features -->
+    <section id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section>
+                        <a href="#" class="bordered-feature-image"><img src="assets/images/pic01.jpg" alt="CX Strategy"></a>
+                        <h2>Customer Experience</h2>
+                        <p>Delivering seamless customer journeys using SAP CX, CDC, CDP, and Emarsys.</p>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section>
+                        <a href="#" class="bordered-feature-image"><img src="assets/images/pic02.jpg" alt="SAP Architecture"></a>
+                        <h2>Solution Architecture</h2>
+                        <p>Leading digital transformations using S/4HANA, FSM, CPQ, and SAP BTP.</p>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section>
+                        <a href="#" class="bordered-feature-image"><img src="assets/images/pic03.jpg" alt="Integration"></a>
+                        <h2>Integration & BTP</h2>
+                        <p>Connecting ecosystems using SAP CPI, BTP, and microservices architecture.</p>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section>
+                        <a href="#" class="bordered-feature-image"><img src="assets/images/pic04.jpg" alt="AI and Analytics"></a>
+                        <h2>AI & Analytics</h2>
+                        <p>Exploring intelligent insights with Joule, SAP Analytics Cloud, and AI-powered CX.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  {% if paginator.previous_page or paginator.next_page %}
-      {% include pagination.html %}
-  {% endif %}
+    <!-- About -->
+    <section id="content">
+        <div class="container">
+            <div class="row aln-center">
+                <div class="col-6 col-12-medium">
+                    <section>
+                        <header>
+                            <h2>About Me</h2>
+                            <h3>23+ years of global SAP consulting excellence</h3>
+                        </header>
+                        <p>
+                            I help enterprises unlock value through strategic SAP transformations, combining deep functional expertise with cutting-edge integration and AI tools. I've worked with clients like Apple, Bose, ACN, and Zenni Optical, managing $8M portfolios and enabling
+                            intelligent CX platforms.
+                        </p>
+                    </section>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <section>
+                        <header>
+                            <h2>Client Testimonials</h2>
+                            <h3>Hear from those I’ve helped</h3>
+                        </header>
+                        <ul class="quote-list">
+                            <li>
+                                <img src="assets/images/pic06.jpg" alt="Client">
+                                <p>“Venkata transformed our sales cloud implementation with precision.”</p>
+                                <span>Sr. IT Director, Global Manufacturing</span>
+                            </li>
+                            <li>
+                                <img src="assets/images/pic07.jpg" alt="Client">
+                                <p>“The integration between ECC and SAP CX was seamless under his leadership.”</p>
+                                <span>VP of Operations, B2B Commerce</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-12-medium">
+                    <section>
+                        <h2>Latest Blog Posts</h2>
+                        <ul class="link-list">
+                            <li><a href="blogs/2025-07-01-sap-cx-ai.html">SAP CX + AI: A 2025 Perspective</a></li>
+                            <li><a href="blogs/2025-06-28-cdp-personalization.html">Using SAP CDP for Real-Time Personalization</a></li>
+                            <li><a href="blogs/2025-06-15-vtp-cloud-integration.html">Mastering SAP CPI for BTP Success</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <section>
+                        <h2>Get in Touch</h2>
+                        <p>Email: <a href="mailto:sundaragiri@gmail.com">sundaragiri@gmail.com</a><br> LinkedIn: <a href="https://linkedin.com/in/sundaragiri" target="_blank">linkedin.com/in/sundaragiri</a></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright -->
+    <div id="copyright">
+        <p>&copy; 2025 Venkata R. Sundaragiri | Designed with ♥ using HTML5 UP Halcyonic</p>
+    </div>
+
+</body>
+
+</html>
