@@ -228,28 +228,29 @@ section:last-child,
 .row > .off-11 { margin-left: 91.66667%; }
 .row > .off-12 { margin-left: 100%; }
 
-/* Logo Styling */
+/* Logo Styling - Improved to blend better with site */
 h1#logo {
-    background-image: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: 700;
-    font-size: 2.5rem;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 1px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 2.2rem;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    letter-spacing: 2px;
     display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.5rem;
     transition: all 0.3s ease-in-out;
     line-height: 1.2;
-    text-shadow: none !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     margin: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 h1#logo:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 h1#logo a {
@@ -447,7 +448,7 @@ h1#logo a {
     color: #f6f8f8;
 }
 
-/* Navigation Improvements */
+/* Navigation Improvements - Fixed hover color */
 #nav a {
     color: #ffffff !important;
     font-size: 1.2rem;
@@ -460,7 +461,7 @@ h1#logo a {
 }
 
 #nav a:hover {
-    background-color: rgba(244, 3, 23, 0.5) !important;
+    background-color: rgba(108, 99, 255, 0.3) !important;
     color: #ffffff !important;
 }
 
