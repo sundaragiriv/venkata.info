@@ -1,34 +1,43 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Contact | Venkata Sundaragiri</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Contact Venkata Sundaragiri – SAP Architect, AI Consultant, Thought Leader">
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | Venkata R.S | SAP Architect & AI Consultant</title>
+    <meta name="description" content="Contact Venkata Sundaragiri – SAP Architect, AI Consultant, Thought Leader. Reach out for consulting, speaking, or collaboration.">
+    <meta name="keywords" content="SAP Consultant Contact, AI Consultant, CX Transformation Expert">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="main.css" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style">
 </head>
 
 <body>
     <div id="page-wrapper">
-
         <!-- Header -->
         <section id="header">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 id="logo" style="line-height: 1.2;">
-                            <span style="font-size: 2.4rem; font-weight: 700; letter-spacing: 1px; color: #ffffff;">VENKATA</span><br>
-                            <span style="font-family: 'Brush Script MT', cursive; font-size: 1.4rem; color: #d12a2a;">Sundaragiri</span>
+                <div class="row align-items-center">
+                    <div class="col-12 d-flex justify-content-between flex-wrap">
+                        <!-- Logo -->
+                        <h1 id="logo">
+                            <a href="index.html" aria-label="Venkata R.S Homepage">Venkata R.S</a>
                         </h1>
-                        <nav id="nav">
+
+                        <!-- Navigation -->
+                        <nav id="nav" role="navigation" aria-label="Main navigation">
                             <a href="index.html">Home</a>
                             <a href="resume.html">Resume</a>
                             <a href="skills.html">Skills</a>
                             <a href="blogs.html">Tech Blog</a>
                             <a href="personal.html">Veda & Life</a>
-                            <a href="contact.html">Contact</a>
+                            <a href="contact.html" aria-current="page">Contact</a>
                         </nav>
                     </div>
                 </div>
@@ -39,49 +48,92 @@
         <section id="content">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-
+                    <div class="col-8 col-12-medium">
                         <section>
                             <header>
                                 <h2>Contact Me</h2>
                                 <h3>Reach out for consulting, speaking, or collaboration</h3>
                             </header>
 
-                            <form name="contact" method="POST" data-netlify="true">
+                            <form name="contact" method="POST" data-netlify="true" style="background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
                                 <input type="hidden" name="form-name" value="contact">
-                                <div>
-                                    <label for="name">Name</label><br />
-                                    <input type="text" name="name" id="name" required />
+                                
+                                <div style="margin-bottom: 1.5rem;">
+                                    <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #373f42;">Name *</label>
+                                    <input type="text" name="name" id="name" required 
+                                           style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;" />
                                 </div>
-                                <div>
-                                    <label for="email">Email</label><br />
-                                    <input type="email" name="email" id="email" required />
+                                
+                                <div style="margin-bottom: 1.5rem;">
+                                    <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #373f42;">Email *</label>
+                                    <input type="email" name="email" id="email" required 
+                                           style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;" />
                                 </div>
-                                <div>
-                                    <label for="message">Message</label><br />
-                                    <textarea name="message" id="message" rows="6" required></textarea>
+                                
+                                <div style="margin-bottom: 1.5rem;">
+                                    <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #373f42;">Subject</label>
+                                    <input type="text" name="subject" id="subject" 
+                                           style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;" />
                                 </div>
+                                
+                                <div style="margin-bottom: 1.5rem;">
+                                    <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #373f42;">Message *</label>
+                                    <textarea name="message" id="message" rows="6" required 
+                                              style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; resize: vertical;"></textarea>
+                                </div>
+                                
                                 <div>
-                                    <input type="submit" value="Send Message" />
+                                    <button type="submit" style="background: linear-gradient(to bottom, #ed391b, #ce1a00); color: white; border: none; padding: 0.75rem 2rem; border-radius: 6px; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease;">
+                                        Send Message
+                                    </button>
                                 </div>
                             </form>
-
-                            <hr />
-
-                            <p>You can also connect with me directly:</p>
-                            <ul>
-                                <li>Email: <a href="mailto:sundaragiri@gmail.com">sundaragiri@gmail.com</a></li>
-                                <li>LinkedIn: <a href="https://linkedin.com/in/sundaragiri" target="_blank">linkedin.com/in/sundaragiri</a></li>
-                            </ul>
                         </section>
+                    </div>
 
+                    <div class="col-4 col-12-medium">
+                        <section>
+                            <header>
+                                <h2>Get in Touch</h2>
+                                <h3>Direct contact options</h3>
+                            </header>
+                            
+                            <div style="background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                                <h4 style="color: #373f42; margin-bottom: 1rem;">Contact Information</h4>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                        <span style="margin-right: 0.5rem;">📧</span>
+                                        <a href="mailto:sundaragiri@gmail.com" style="color: #ED391B;">sundaragiri@gmail.com</a>
+                                    </li>
+                                    <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                        <span style="margin-right: 0.5rem;">💼</span>
+                                        <a href="https://linkedin.com/in/sundaragiri" target="_blank" rel="noopener noreferrer" style="color: #ED391B;">LinkedIn Profile</a>
+                                    </li>
+                                    <li style="margin-bottom: 0.75rem; display: flex; align-items: center;">
+                                        <span style="margin-right: 0.5rem;">🌐</span>
+                                        <span>Available for global consulting</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div style="background: rgba(108, 99, 255, 0.05); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem;">
+                                <h4 style="color: #373f42; margin-bottom: 1rem;">Areas of Expertise</h4>
+                                <ul class="check-list" style="margin: 0;">
+                                    <li>SAP CX Transformation</li>
+                                    <li>S/4HANA Architecture</li>
+                                    <li>AI Strategy & Implementation</li>
+                                    <li>Integration Solutions</li>
+                                    <li>Digital Leadership</li>
+                                </ul>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <section id="footer">
+        <footer id="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-6 col-12-medium">
@@ -91,25 +143,54 @@
                                 <li><a href="blogs.html">Blog</a></li>
                                 <li><a href="resume.html">Resume</a></li>
                                 <li><a href="skills.html">Skills</a></li>
+                                <li><a href="personal.html">Veda & Life</a></li>
                             </ul>
                         </section>
                     </div>
                     <div class="col-6 col-12-medium">
                         <section>
                             <h2>Stay Connected</h2>
-                            <p>Email: <a href="mailto:sundaragiri@gmail.com">sundaragiri@gmail.com</a><br /> LinkedIn: <a href="https://linkedin.com/in/sundaragiri" target="_blank">linkedin.com/in/sundaragiri</a>
+                            <p>
+                                Email: <a href="mailto:sundaragiri@gmail.com">sundaragiri@gmail.com</a><br />
+                                LinkedIn: <a href="https://linkedin.com/in/sundaragiri" target="_blank" rel="noopener noreferrer">linkedin.com/in/sundaragiri</a>
                             </p>
                         </section>
                     </div>
                 </div>
             </div>
-        </section>
+        </footer>
 
         <div id="copyright">
-            &copy; 2025 Venkata R. Sundaragiri | Theme: <a href="https://html5up.net/halcyonic">Halcyonic</a>
+            &copy; 2025 Venkata R.S | Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a>
         </div>
-
     </div>
-</body>
 
+    <!-- Scripts -->
+    <script>
+        // Form enhancement
+        document.querySelector('form[name="contact"]').addEventListener('submit', function(e) {
+            const button = this.querySelector('button[type="submit"]');
+            button.textContent = 'Sending...';
+            button.disabled = true;
+        });
+
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
 </html>

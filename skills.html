@@ -1,72 +1,138 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <title>Skills | Venkata Sundaragiri</title>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <title>Skills | Venkata R.S | SAP Architect & AI Consultant</title>
+    <meta name="description" content="Technical skills and expertise of Venkata Sundaragiri - SAP CX, S/4HANA, AI/ML, Integration, and Web Development.">
+    <meta name="keywords" content="SAP Skills, CX Expertise, S/4HANA, AI ML, Integration, BTP">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="main.css" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style">
+    
     <style>
         .skill-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2em;
-            margin: 3rem auto;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
         }
         
         .skill-tile {
             background: white;
-            padding: 2em;
+            padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
+            border-left: 4px solid #6366f1;
         }
         
         .skill-tile:hover {
-            background-color: #ffecec;
+            background-color: rgba(108, 99, 255, 0.02);
             transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
         
         .skill-tile h3 {
-            font-size: 1.5em;
-            margin-bottom: 0.5em;
-            color: #c0392b;
+            font-size: 1.4em;
+            margin-bottom: 1rem;
+            color: #d12a2a;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
         }
         
         .skill-tile ul {
-            padding-left: 1.2em;
+            margin: 0;
         }
         
         .skill-tile li {
-            list-style: '✔️ ';
-            margin-bottom: 0.4em;
-            color: #111;
+            padding: 0.4rem 0;
+            color: #474f51;
+            border-bottom: 1px solid #f0f0f0;
+            transition: color 0.2s ease;
+        }
+        
+        .skill-tile li:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-tile li:hover {
+            color: #d12a2a;
         }
         
         .skill-intro {
             text-align: center;
-            max-width: 900px;
-            margin: 3rem auto;
+            max-width: 800px;
+            margin: 2rem auto;
+            background: rgba(108, 99, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .skill-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #d12a2a;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .skill-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .skill-tile {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 
 <body>
     <div id="page-wrapper">
-
         <!-- Header -->
         <section id="header">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
+                <div class="row align-items-center">
+                    <div class="col-12 d-flex justify-content-between flex-wrap">
+                        <!-- Logo -->
                         <h1 id="logo">
-                            <img src="assets/images/logo.png" alt="Venkata Sundaragiri" style="max-height: 50px;">
+                            <a href="index.html" aria-label="Venkata R.S Homepage">Venkata R.S</a>
                         </h1>
-                        <nav id="nav">
+
+                        <!-- Navigation -->
+                        <nav id="nav" role="navigation" aria-label="Main navigation">
                             <a href="index.html">Home</a>
                             <a href="resume.html">Resume</a>
-                            <a href="skills.html">Skills</a>
+                            <a href="skills.html" aria-current="page">Skills</a>
                             <a href="blogs.html">Tech Blog</a>
                             <a href="personal.html">Veda & Life</a>
                             <a href="contact.html">Contact</a>
@@ -80,75 +146,129 @@
         <section id="content">
             <div class="container">
                 <div class="skill-intro">
-                    <h2>Skills & Domains</h2>
-                    <p>Comprehensive experience across SAP solutions, integration platforms, and emerging AI technologies.</p>
+                    <h2>Skills & Expertise</h2>
+                    <p>Comprehensive experience across SAP solutions, integration platforms, and emerging AI technologies. 23+ years of delivering enterprise transformation solutions for Fortune 500 companies.</p>
+                </div>
+
+                <div class="skill-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">23+</span>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <div class="stat-label">SAP Modules</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <div class="stat-label">Certifications</div>
+                    </div>
                 </div>
 
                 <div class="skill-grid">
                     <div class="skill-tile">
-                        <h3>SAP Functional Architect</h3>
+                        <h3>🏗️ SAP Functional Architecture</h3>
                         <ul>
-                            <li>S/4HANA SD, MM, PS</li>
-                            <li>Asset Management, Service</li>
-                            <li>Order-to-Cash (OTC)</li>
+                            <li>S/4HANA Sales & Distribution (SD)</li>
+                            <li>Materials Management (MM)</li>
+                            <li>Project Systems (PS)</li>
+                            <li>Asset Management & Service</li>
+                            <li>Order-to-Cash (OTC) Processes</li>
                             <li>Workflow & User Exits</li>
                         </ul>
                     </div>
 
                     <div class="skill-tile">
-                        <h3>SAP CX Transformation</h3>
+                        <h3>🎯 SAP CX Transformation</h3>
                         <ul>
-                            <li>Sales Cloud V2, Service Cloud V2</li>
-                            <li>CDC, CDP, Emarsys</li>
-                            <li>Commerce, Qualtrics</li>
-                            <li>Omnichannel Enablement</li>
+                            <li>Sales Cloud V2 & Service Cloud V2</li>
+                            <li>Customer Data Cloud (CDC)</li>
+                            <li>Customer Data Platform (CDP)</li>
+                            <li>Emarsys Marketing Automation</li>
+                            <li>Commerce Cloud & Qualtrics</li>
+                            <li>Omnichannel Experience Design</li>
                         </ul>
                     </div>
 
                     <div class="skill-tile">
-                        <h3>SAP FSM + Edge</h3>
+                        <h3>⚙️ SAP FSM & Edge Solutions</h3>
                         <ul>
-                            <li>Field Service Management</li>
+                            <li>Field Service Management (FSM)</li>
                             <li>Callidus CPQ & SAP CPQ</li>
-                            <li>IoT & BRIM Integration</li>
-                            <li>Subscription Order Mgmt</li>
+                            <li>IoT Integration & BRIM</li>
+                            <li>Subscription Order Management</li>
+                            <li>Mobile Workforce Solutions</li>
+                            <li>Asset Intelligence Network</li>
                         </ul>
                     </div>
 
                     <div class="skill-tile">
-                        <h3>Integration Platforms</h3>
+                        <h3>🔗 Integration Platforms</h3>
                         <ul>
-                            <li>SAP CPI, BTP</li>
-                            <li>Event Mesh, Open Connectors</li>
-                            <li>REST APIs, Webhooks</li>
+                            <li>SAP Cloud Platform Integration (CPI)</li>
+                            <li>SAP Business Technology Platform (BTP)</li>
+                            <li>Event Mesh & Open Connectors</li>
+                            <li>REST APIs & Webhooks</li>
+                            <li>Microservices Architecture</li>
                             <li>End-to-End SAP Integration</li>
                         </ul>
                     </div>
 
                     <div class="skill-tile">
-                        <h3>Web Development</h3>
+                        <h3>💻 Web Development</h3>
                         <ul>
-                            <li>HTML, CSS, JavaScript</li>
-                            <li>jQuery, JSON, XML</li>
-                            <li>Java, JSP</li>
+                            <li>HTML5, CSS3, JavaScript ES6+</li>
+                            <li>jQuery & Modern JS Frameworks</li>
+                            <li>JSON & XML Data Processing</li>
+                            <li>Java & JSP Development</li>
+                            <li>Responsive Web Design</li>
+                            <li>Progressive Web Applications</li>
                         </ul>
                     </div>
 
                     <div class="skill-tile">
-                        <h3>AI/ML + Gen AI</h3>
+                        <h3>🤖 AI/ML & Analytics</h3>
                         <ul>
-                            <li>SAP Joule, SAP CX AI Toolkit</li>
+                            <li>SAP Joule AI Assistant</li>
+                            <li>SAP CX AI Toolkit</li>
                             <li>GPTs, Claude, LangChain</li>
-                            <li>Python, SAP Analytics Cloud</li>
-                            <li>Vertex AI, LLM Workflows</li>
+                            <li>Python for Data Science</li>
+                            <li>SAP Analytics Cloud</li>
+                            <li>Vertex AI & LLM Workflows</li>
                         </ul>
+                    </div>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-top: 2rem;">
+                    <h3 style="color: #373f42; margin-bottom: 1rem;">Industry Expertise</h3>
+                    <div class="row">
+                        <div class="col-6 col-12-medium">
+                            <ul class="check-list">
+                                <li>Manufacturing & Distribution</li>
+                                <li>Technology & Software</li>
+                                <li>Healthcare & Life Sciences</li>
+                                <li>Retail & Consumer Goods</li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-12-medium">
+                            <ul class="check-list">
+                                <li>Energy & Utilities</li>
+                                <li>Financial Services</li>
+                                <li>Professional Services</li>
+                                <li>Construction & Engineering</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <section id="footer">
+        <footer id="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-6 col-12-medium">
@@ -164,18 +284,62 @@
                     <div class="col-6 col-12-medium">
                         <section>
                             <h2>Connect with Me</h2>
-                            <p>Email: <a href="mailto:sundaragiri@gmail.com">sundaragiri@gmail.com</a><br /> LinkedIn: <a href="https://linkedin.com/in/sundaragiri" target="_blank">linkedin.com/in/sundaragiri</a></p>
+                            <p>
+                                Email: <a href="mailto:sundaragiri@gmail.com">sundaragiri@gmail.com</a><br />
+                                LinkedIn: <a href="https://linkedin.com/in/sundaragiri" target="_blank" rel="noopener noreferrer">linkedin.com/in/sundaragiri</a>
+                            </p>
                         </section>
                     </div>
                 </div>
             </div>
-        </section>
+        </footer>
 
-        <!-- Copyright -->
         <div id="copyright">
-            &copy; 2025 Venkata R. Sundaragiri | Design: <a href="http://html5up.net">HTML5 UP</a>
+            &copy; 2025 Venkata R.S | Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a>
         </div>
     </div>
-</body>
 
+    <!-- Scripts -->
+    <script>
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Skill tile animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-tile').forEach(tile => {
+            tile.style.opacity = '0';
+            tile.style.transform = 'translateY(20px)';
+            tile.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            skillObserver.observe(tile);
+        });
+    </script>
+</body>
 </html>

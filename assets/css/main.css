@@ -1233,6 +1233,11 @@ section:last-child,
     }
 }
 
+#logo img {
+    display: block;
+    margin: 0 auto;
+}
+
 
 /* Multi-use */
 
@@ -1330,7 +1335,7 @@ section:last-child,
     background-image: -ms-linear-gradient(top, #ed391b, #ce1a00);
     background-image: linear-gradient(top, #ed391b, #ce1a00);
     display: inline-block;
-    background-color: #ed391b;
+    background-color: #6c63ff;
     color: #fff;
     text-decoration: none;
     font-size: 1.75em;
@@ -1345,11 +1350,11 @@ section:last-child,
 }
 
 .button-large:hover {
-    background-image: -moz-linear-gradient(top, #fd492b, #de2a10);
-    background-image: -webkit-linear-gradient(top, #fd492b, #de2a10);
-    background-image: -ms-linear-gradient(top, #fd492b, #de2a10);
-    background-image: linear-gradient(top, #fd492b, #de2a10);
-    background-color: #fd492b;
+    background-image: -moz-linear-gradient(top, #fd492b, #6c63ff);
+    background-image: -webkit-linear-gradient(top, #fd492b, #6c63ff);
+    background-image: -ms-linear-gradient(top, #fd492b, #6c63ff);
+    background-image: linear-gradient(top, #fd492b, #6c63ff);
+    background-color: #6c63ff;
     box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.75), inset 0px 2px 0px 0px rgba(255, 192, 192, 0.5), inset 0px 0px 0px 2px rgba(255, 96, 96, 0.85), 3px 3px 3px 1px rgba(0, 0, 0, 0.15);
 }
 
@@ -1998,4 +2003,84 @@ section:last-child,
 
 .bordered-feature-image img:hover {
     transform: scale(1.03);
+}
+
+
+/* Utility Flex Classes */
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+
+/* Equal height row for About / Expertise / Testimonials */
+
+#content .row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+#content .card {
+    height: 100%;
+}
+
+
+/* Adjust spacing after feature cards */
+
+#features {
+    margin-bottom: 2rem;
+}
+
+
+/* Remove glow from logo */
+
+h1#logo {
+    background-image: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    font-size: 2.5rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease-in-out;
+    line-height: 1.2;
+    text-shadow: none !important;
+    /* Removed glow */
+}
+
+h1#logo:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+/* Fix image alt text */
+
+.quote-list img[alt="Client testimonial image"]:nth-of-type(1) {
+    alt: "Photo of Sr. Director at Honeywell";
+}
+
+.quote-list img[alt="Client testimonial image"]:nth-of-type(2) {
+    alt: "Photo of VP at Carlisle Roofing";
+}
+
+.quote-list img[alt="Client testimonial image"]:nth-of-type(3) {
+    alt: "Photo of Director at LB Foster";
 }
