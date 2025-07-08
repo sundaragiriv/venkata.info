@@ -6,19 +6,59 @@
     <title>Venkata R.S | SAP Architect & AI Consultant</title>
     <meta name="description" content="SAP Architect, CX Transformation Specialist, AI Strategist & Innovator with 23+ years of global consulting experience.">
     <meta name="keywords" content="SAP Architect, CX Transformation, AI Consultant, SAP BTP, S/4HANA, Integration">
+    <meta name="author" content="Venkata Sundaragiri">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Venkata R.S | SAP Architect & AI Consultant">
+    <meta property="og:description" content="SAP Architect, CX Transformation Specialist, AI Strategist & Innovator with 23+ years of global consulting experience.">
+    <meta property="og:url" content="https://venkata.info">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Venkata Sundaragiri",
+        "jobTitle": "SAP Architect & AI Consultant",
+        "description": "SAP Architect, CX Transformation Specialist, AI Strategist & Innovator with 23+ years of global consulting experience",
+        "url": "https://venkata.info",
+        "sameAs": [
+            "https://linkedin.com/in/sundaragiri"
+        ],
+        "knowsAbout": ["SAP S/4HANA", "SAP CX", "AI Strategy", "Digital Transformation", "SAP BTP"],
+        "alumniOf": "Fortune 500 Companies",
+        "email": "sundaragiri@gmail.com"
+    }
+    </script>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="accessibility.css" />
     
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://images.pexels.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <!-- Preload critical fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    </noscript>
 </head>
 
 <body>
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <div id="page-wrapper">
         <!-- Header -->
         <section id="header">
@@ -52,11 +92,15 @@
                                 Welcome! I'm <strong><span style="color: #6c63ff;">Venkata Sundaragiri</span></strong><br />
                                 SAP Architect | CX Transformation Specialist | AI Strategist & Innovator | LinkedIn Group Founder | Entrepreneur | PromptVault Builder
                             </p>
-                            <a href="resume.html" class="button-large" aria-label="Explore my projects and resume">Explore Projects →</a>
+                            <div style="margin-top: 1.5rem;">
+                                <a href="resume.html" class="button-large" aria-label="Explore my projects and resume">Explore Projects →</a>
+                                <a href="contact.html" class="button-large" style="margin-left: 1rem; background: transparent; border: 2px solid #6c63ff; color: #6c63ff;" aria-label="Get in touch">Get In Touch</a>
+                            </div>
                         </div>
                         <div class="col-6 col-12-medium imp-medium">
                             <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" 
                                  alt="Professional consultant working at desk with laptop and documents" 
+                                 width="500" height="340"
                                  loading="lazy" 
                                  style="width: 100%; max-height: 340px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);" />
                         </div>
@@ -66,53 +110,58 @@
         </section>
 
         <!-- Feature Cards -->
+        <main id="main-content">
         <section id="features">
             <div class="container">
                 <div class="row">
                     <div class="col-3 col-6-medium col-12-small">
                         <section class="card">
-                            <a href="#" class="bordered-feature-image" aria-label="Learn more about Customer Experience services">
+                            <div class="bordered-feature-image">
                                 <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg" 
                                      alt="Customer experience and digital transformation" 
+                                     width="300" height="150"
                                      style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;" 
                                      loading="lazy" />
-                            </a>
+                            </div>
                             <h2>Customer Experience</h2>
                             <p>Crafting seamless customer journeys using SAP CX, CDC, CDP, and Emarsys.</p>
                         </section>
                     </div>
                     <div class="col-3 col-6-medium col-12-small">
                         <section class="card">
-                            <a href="#" class="bordered-feature-image" aria-label="Learn more about Solution Architecture services">
+                            <div class="bordered-feature-image">
                                 <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" 
                                      alt="Enterprise solution architecture and planning" 
+                                     width="300" height="150"
                                      style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;" 
                                      loading="lazy" />
-                            </a>
+                            </div>
                             <h2>Solution Architecture</h2>
                             <p>Leading transformations using S/4HANA, CPQ, FSM, and SAP BTP.</p>
                         </section>
                     </div>
                     <div class="col-3 col-6-medium col-12-small">
                         <section class="card">
-                            <a href="#" class="bordered-feature-image" aria-label="Learn more about Integration and BTP services">
+                            <div class="bordered-feature-image">
                                 <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg" 
                                      alt="System integration and cloud platform development" 
+                                     width="300" height="150"
                                      style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;" 
                                      loading="lazy" />
-                            </a>
+                            </div>
                             <h2>Integration & BTP</h2>
                             <p>Building ecosystems using CPI, Event Mesh, and microservices.</p>
                         </section>
                     </div>
                     <div class="col-3 col-6-medium col-12-small">
                         <section class="card">
-                            <a href="#" class="bordered-feature-image" aria-label="Learn more about AI and Analytics services">
+                            <div class="bordered-feature-image">
                                 <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" 
                                      alt="Artificial intelligence and data analytics" 
+                                     width="300" height="150"
                                      style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;" 
                                      loading="lazy" />
-                            </a>
+                            </div>
                             <h2>AI & Analytics</h2>
                             <p>Insights via Joule, SAP Analytics Cloud, and intelligent CX AI toolkits.</p>
                         </section>
@@ -132,12 +181,13 @@
                                 <h2>About Venkata</h2>
                                 <h3>SAP Architect, AI Strategist, and CX Leader</h3>
                             </header>
-                            <a href="#" class="feature-image" aria-label="Learn more about Venkata's background">
+                            <div class="feature-image">
                                 <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" 
                                      alt="Professional business consultant in modern office environment" 
+                                     width="400" height="200"
                                      style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px;" 
                                      loading="lazy" />
-                            </a>
+                            </div>
                             <p>
                                 Venkata Sundaragiri brings over 23 years of global consulting experience across SAP S/4HANA, CX Cloud, and AI. Known for his enterprise-wide solutions at Fortune 500 companies like Apple, Bose, and Zenni Optical, he bridges business with deep technology and integration insight.
                             </p>
@@ -172,28 +222,31 @@
                                 <li>
                                     <img src="https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg" 
                                          alt="Professional headshot of Sr. Director at Honeywell" 
+                                         width="60" height="60"
                                          loading="lazy" />
                                     <div>
                                         <p>"Venkata transformed our CRM & CX landscape with precision and clarity."</p>
-                                        <span>Sr. Director, Honeywell</span>
+                                        <span>Sr. Director, Honeywell (2024)</span>
                                     </div>
                                 </li>
                                 <li>
                                     <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg" 
                                          alt="Professional headshot of VP at Carlisle Roofing" 
+                                         width="60" height="60"
                                          loading="lazy" />
                                     <div>
                                         <p>"His architecture simplified operations across 15 business units."</p>
-                                        <span>VP, Carlisle Roofing</span>
+                                        <span>VP, Carlisle Roofing (2023)</span>
                                     </div>
                                 </li>
                                 <li>
                                     <img src="https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg" 
                                          alt="Professional headshot of Director at LB Foster" 
+                                         width="60" height="60"
                                          loading="lazy" />
                                     <div>
                                         <p>"Thought leader in AI-powered SAP platforms."</p>
-                                        <span>Director, LB Foster</span>
+                                        <span>Director, LB Foster (2024)</span>
                                     </div>
                                 </li>
                             </ul>
@@ -238,6 +291,7 @@
                 </div>
             </div>
         </section>
+        </main>
 
         <!-- Footer -->
         <footer id="footer">
@@ -274,12 +328,17 @@
     <!-- Scripts -->
     <script>
         function scrollCarousel(direction) {
-            const carousel = document.getElementById("blogCarousel");
-            const scrollAmount = 270;
-            carousel.scrollBy({
-                left: direction * scrollAmount,
-                behavior: "smooth"
-            });
+            try {
+                const carousel = document.getElementById("blogCarousel");
+                if (!carousel) return;
+                const scrollAmount = 270;
+                carousel.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: "smooth"
+                });
+            } catch (error) {
+                console.warn('Carousel scroll failed:', error);
+            }
         }
 
         // Add keyboard navigation for carousel
