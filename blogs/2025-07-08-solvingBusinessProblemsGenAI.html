@@ -1,177 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solving Business Problems Using Prompts and LLMs in SAP’s Generative AI Hub</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0 1rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        h1,
-        h2,
-        h3 {
-            color: #003366;
-        }
-        
-        img {
-            display: block;
-            margin: 1rem auto;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        }
-        
-        figure {
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        figcaption {
-            font-size: 0.9rem;
-            color: #555;
-            margin-top: 0.5rem;
-        }
-        
-        blockquote {
-            border-left: 4px solid #ccc;
-            margin: 1rem 0;
-            padding-left: 1rem;
-            color: #555;
-            font-style: italic;
-        }
-        
-        footer {
-            font-size: 0.9rem;
-            color: #666;
-            margin: 3rem 0;
-            border-top: 1px solid #ddd;
-            padding-top: 1rem;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solving Business Problems Using Prompts and LLMs in SAP's Generative AI Hub | Venkata R.S</title>
+    <meta name="description" content="Learn how to harness SAP's Generative AI Hub with LLMs and prompt engineering to solve real-world business challenges.">
+    <meta name="keywords" content="SAP Generative AI Hub, LLMs, Prompt Engineering, SAP BTP, AI Foundation">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../main.css" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
+    <div id="page-wrapper">
+        <!-- Header -->
+        <section id="header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 d-flex justify-content-between flex-wrap">
+                        <!-- Logo -->
+                        <h1 id="logo">
+                            <a href="../index.html" aria-label="Venkata R.S Homepage">Venkata R.S</a>
+                        </h1>
 
-    <h1>Solving Your Business Problems Using Prompts and LLMs in SAP’s Generative AI Hub</h1>
+                        <!-- Navigation -->
+                        <nav id="nav" role="navigation" aria-label="Main navigation">
+                            <a href="../index.html">Home</a>
+                            <a href="../resume.html">Resume</a>
+                            <a href="../skills.html">Skills</a>
+                            <a href="../blogs.html" aria-current="page">Tech Blog</a>
+                            <a href="../personal.html">Veda & Life</a>
+                            <a href="../contact.html">Contact</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <p><strong>By [Your Name]</strong></p>
-    <p><em>Published on July 8, 2025</em></p>
+        <!-- Content -->
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <section style="max-width: 800px; margin: 0 auto;">
+                            <header style="text-align: center; margin-bottom: 2rem;">
+                                <h1 style="color: #373f42; font-size: 2.2em; margin-bottom: 0.5rem;">Solving Your Business Problems Using Prompts and LLMs in SAP's Generative AI Hub</h1>
+                                <p style="color: #96a9b5; font-size: 1.1em; margin: 0;"><strong>By Venkata Sundaragiri</strong> | <em>Published on July 8, 2025</em></p>
+                            </header>
 
-    <h2>Introduction</h2>
-    <p>
-        In an era where digital transformation is paramount, organizations seek ways to automate complex processes, enhance decision-making, and deliver superior customer experiences. Generative AI, driven by large language models (LLMs) and refined through prompt
-        engineering, has emerged as a key enabler. SAP’s Generative AI Hub—part of the AI Foundation on the SAP Business Technology Platform (BTP)—offers a unified cockpit for selecting, orchestrating, and operationalizing best-in-class LLMs within enterprise
-        landscapes. This article details how businesses can harness prompts and LLMs via the Generative AI Hub to address real-world challenges.
-    </p>
+                            <h2>Introduction</h2>
+                            <p>
+                                In an era where digital transformation is paramount, organizations seek ways to automate complex processes, enhance decision-making, and deliver superior customer experiences. Generative AI, driven by large language models (LLMs) and refined through prompt
+                                engineering, has emerged as a key enabler. SAP's Generative AI Hub—part of the AI Foundation on the SAP Business Technology Platform (BTP)—offers a unified cockpit for selecting, orchestrating, and operationalizing best-in-class LLMs within enterprise
+                                landscapes. This article details how businesses can harness prompts and LLMs via the Generative AI Hub to address real-world challenges.
+                            </p>
 
-    <h2>AI Foundation and Generative AI Hub</h2>
-    <p>
-        SAP’s AI Foundation provides the underlying services for integrating AI into business applications and processes on SAP BTP (SAP SE, n.d.-a). It offers governance, security, and a managed runtime aligned with enterprise compliance standards.
-    </p>
+                            <h2>AI Foundation and Generative AI Hub</h2>
+                            <p>
+                                SAP's AI Foundation provides the underlying services for integrating AI into business applications and processes on SAP BTP (SAP SE, n.d.-a). It offers governance, security, and a managed runtime aligned with enterprise compliance standards.
+                            </p>
 
-    <figure>
-        <img src="images/aiArchitecture.png" alt="Architecture diagram of SAP Generative AI Hub">
-        <figcaption>Figure 1. Architecture diagram of SAP’s Generative AI Hub on AI Core and AI Launchpad.</figcaption>
-    </figure>
+                            <figure style="margin: 2rem 0; text-align: center;">
+                                <img src="images/aiArchitecture.png" alt="Architecture diagram of SAP Generative AI Hub" style="display: block; margin: 1rem auto; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);">
+                                <figcaption style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;">Figure 1. Architecture diagram of SAP's Generative AI Hub on AI Core and AI Launchpad.</figcaption>
+                            </figure>
 
-    <p>
-        Within this framework, the <strong>Generative AI Hub</strong> delivers:
-        <ul>
-            <li>A catalog of LLMs from providers such as OpenAI, Cohere, and Meta’s Llama 3 (SAP SE, n.d.-b).</li>
-            <li>Integration with SAP AI Core for model deployment and SAP AI Launchpad for lifecycle management and monitoring.</li>
-            <li>A prompt editor and playground for interactive prompt design and testing.</li>
-            <li>APIs and SDKs enabling developers to embed generative AI into SAPUI5, CAP, or custom applications.</li>
-            <li>Governance features to track usage, control costs, and enforce data-security policies (SAP SE, n.d.-c).</li>
-        </ul>
-    </p>
+                            <p>
+                                Within this framework, the <strong>Generative AI Hub</strong> delivers:
+                            </p>
+                            <ul>
+                                <li>A catalog of LLMs from providers such as OpenAI, Cohere, and Meta's Llama 3 (SAP SE, n.d.-b).</li>
+                                <li>Integration with SAP AI Core for model deployment and SAP AI Launchpad for lifecycle management and monitoring.</li>
+                                <li>A prompt editor and playground for interactive prompt design and testing.</li>
+                                <li>APIs and SDKs enabling developers to embed generative AI into SAPUI5, CAP, or custom applications.</li>
+                                <li>Governance features to track usage, control costs, and enforce data-security policies (SAP SE, n.d.-c).</li>
+                            </ul>
 
-    <h2>Prompt Engineering in the Hub</h2>
-    <p>
-        Prompt engineering is the practice of crafting inputs that steer LLMs toward accurate and contextually relevant outputs:
-    </p>
+                            <h2>Prompt Engineering in the Hub</h2>
+                            <p>
+                                Prompt engineering is the practice of crafting inputs that steer LLMs toward accurate and contextually relevant outputs:
+                            </p>
 
-    <figure>
-        <img src="images/promptEng.Tecniques.png" alt="Infographic of prompt engineering techniques">
-        <figcaption>Figure 2. Key prompt engineering techniques: clarity & context, role specification, examples & templates, and chain-of-thought.</figcaption>
-    </figure>
+                            <figure style="margin: 2rem 0; text-align: center;">
+                                <img src="images/promptEng.Tecniques.png" alt="Infographic of prompt engineering techniques" style="display: block; margin: 1rem auto; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);">
+                                <figcaption style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;">Figure 2. Key prompt engineering techniques: clarity & context, role specification, examples & templates, and chain-of-thought.</figcaption>
+                            </figure>
 
-    <ol>
-        <li><strong>Clarity and Context:</strong> Provide explicit instructions and relevant business data (e.g., customer profile, transaction details).</li>
-        <li><strong>Role Specification:</strong> Define the model’s persona, such as “You are a financial reporting analyst…” to frame the response.</li>
-        <li><strong>Examples and Templates:</strong> Incorporate input–output exemplars to establish the desired format and tone.</li>
-        <li><strong>Chain-of-Thought Prompts:</strong> Encourage the model to “think aloud” through multi-step reasoning for complex tasks.</li>
-    </ol>
+                            <ol>
+                                <li><strong>Clarity and Context:</strong> Provide explicit instructions and relevant business data (e.g., customer profile, transaction details).</li>
+                                <li><strong>Role Specification:</strong> Define the model's persona, such as "You are a financial reporting analyst…" to frame the response.</li>
+                                <li><strong>Examples and Templates:</strong> Incorporate input–output exemplars to establish the desired format and tone.</li>
+                                <li><strong>Chain-of-Thought Prompts:</strong> Encourage the model to "think aloud" through multi-step reasoning for complex tasks.</li>
+                            </ol>
 
-    <h2>Integrating LLMs via the SDK</h2>
-    <p>
-        The Generative AI Hub SDK enables seamless invocation of deployed LLMs from within enterprise applications. Typical integration steps include:
-    </p>
-    <ul>
-        <li><strong>Provisioning:</strong> Deploy selected models in SAP AI Core, choosing compute and memory configurations to balance performance and cost (SAP SE, n.d.-b).</li>
-        <li><strong>Development:</strong> Import the SDK into SAPUI5, CAP, or Node.js/Python projects. Pass business objects (e.g., JSON invoices) to the LLM and handle structured responses.</li>
-        <li><strong>Monitoring:</strong> Track inference metrics, token usage, latency, and expenses via built-in dashboards for transparency and auditability.</li>
-    </ul>
+                            <h2>Integrating LLMs via the SDK</h2>
+                            <p>
+                                The Generative AI Hub SDK enables seamless invocation of deployed LLMs from within enterprise applications. Typical integration steps include:
+                            </p>
+                            <ul>
+                                <li><strong>Provisioning:</strong> Deploy selected models in SAP AI Core, choosing compute and memory configurations to balance performance and cost (SAP SE, n.d.-b).</li>
+                                <li><strong>Development:</strong> Import the SDK into SAPUI5, CAP, or Node.js/Python projects. Pass business objects (e.g., JSON invoices) to the LLM and handle structured responses.</li>
+                                <li><strong>Monitoring:</strong> Track inference metrics, token usage, latency, and expenses via built-in dashboards for transparency and auditability.</li>
+                            </ul>
 
-    <h2>Implementation Roadmap</h2>
-    <p>
-        A phased approach ensures rapid value realization:
-    </p>
-    <ol>
-        <li><strong>Use-Case Discovery:</strong> Conduct stakeholder workshops to identify high-impact scenarios (e.g., automated report generation, customer-support triage).</li>
-        <li><strong>Sandbox Prototyping:</strong> Set up a subaccount in SAP BTP, enable AI Core and AI Launchpad, and deploy a pilot LLM with basic prompts.</li>
-        <li><strong>Validation:</strong> Measure accuracy, throughput, and user feedback. Refine prompts and adjust parameters.</li>
-        <li><strong>Enterprise Rollout:</strong> Expand successful pilots, formalize governance policies around data privacy, ethical AI use, and cost management.</li>
-        <li><strong>Continuous Improvement:</strong> Use analytics to identify stale prompts, implement feedback loops, and plan for model fine-tuning or retraining.</li>
-    </ol>
+                            <h2>Implementation Roadmap</h2>
+                            <p>
+                                A phased approach ensures rapid value realization:
+                            </p>
+                            <ol>
+                                <li><strong>Use-Case Discovery:</strong> Conduct stakeholder workshops to identify high-impact scenarios (e.g., automated report generation, customer-support triage).</li>
+                                <li><strong>Sandbox Prototyping:</strong> Set up a subaccount in SAP BTP, enable AI Core and AI Launchpad, and deploy a pilot LLM with basic prompts.</li>
+                                <li><strong>Validation:</strong> Measure accuracy, throughput, and user feedback. Refine prompts and adjust parameters.</li>
+                                <li><strong>Enterprise Rollout:</strong> Expand successful pilots, formalize governance policies around data privacy, ethical AI use, and cost management.</li>
+                                <li><strong>Continuous Improvement:</strong> Use analytics to identify stale prompts, implement feedback loops, and plan for model fine-tuning or retraining.</li>
+                            </ol>
 
-    <h2>Real-World Use Cases</h2>
-    <ul>
-        <li><strong>HR Virtual Assistant:</strong> A retrieval-augmented system blending SAP SuccessFactors FAQs with GPT-4 to answer employee queries, with human-in-the-loop checks (SAP SE, n.d.-a).</li>
-        <li><strong>Financial Close Narratives:</strong> Automate narrative disclosures by prompting an LLM with key financial metrics.</li>
-        <li><strong>Service-Ticket Automation:</strong> Classify and route incoming tickets, suggest solutions, and escalate critical issues.</li>
-        <li><strong>Supply-Chain Risk Insights:</strong> Analyze shipment logs and external feeds to forecast disruptions and trigger alerts.</li>
-    </ul>
+                            <h2>Real-World Use Cases</h2>
+                            <ul>
+                                <li><strong>HR Virtual Assistant:</strong> A retrieval-augmented system blending SAP SuccessFactors FAQs with GPT-4 to answer employee queries, with human-in-the-loop checks (SAP SE, n.d.-a).</li>
+                                <li><strong>Financial Close Narratives:</strong> Automate narrative disclosures by prompting an LLM with key financial metrics.</li>
+                                <li><strong>Service-Ticket Automation:</strong> Classify and route incoming tickets, suggest solutions, and escalate critical issues.</li>
+                                <li><strong>Supply-Chain Risk Insights:</strong> Analyze shipment logs and external feeds to forecast disruptions and trigger alerts.</li>
+                            </ul>
 
-    <h2>Best Practices and Pitfalls</h2>
-    <ul>
-        <li><strong>Data Masking:</strong> Strip or anonymize sensitive data before sending to external models.</li>
-        <li><strong>Prompt Versioning:</strong> Store templates in version control to enable audit trails and rollbacks.</li>
-        <li><strong>Cost Monitoring:</strong> Set budgets and alerts for token usage; consider on-premise deployments for high-volume scenarios.</li>
-        <li><strong>Ethical Oversight:</strong> Establish human-review gates for high-stakes outputs, such as credit-approval recommendations.</li>
-    </ul>
+                            <h2>Best Practices and Pitfalls</h2>
+                            <ul>
+                                <li><strong>Data Masking:</strong> Strip or anonymize sensitive data before sending to external models.</li>
+                                <li><strong>Prompt Versioning:</strong> Store templates in version control to enable audit trails and rollbacks.</li>
+                                <li><strong>Cost Monitoring:</strong> Set budgets and alerts for token usage; consider on-premise deployments for high-volume scenarios.</li>
+                                <li><strong>Ethical Oversight:</strong> Establish human-review gates for high-stakes outputs, such as credit-approval recommendations.</li>
+                            </ul>
 
-    <h2>Conclusion</h2>
-    <p>
-        By leveraging SAP’s Generative AI Hub—underpinned by the AI Foundation—organizations can democratize access to powerful LLMs, embed them seamlessly in business processes, and maintain robust governance. Mastery of prompt engineering, judicious model selection,
-        and a structured rollout roadmap are key to unlocking generative AI’s potential for solving critical business problems.
-    </p>
+                            <h2>Conclusion</h2>
+                            <p>
+                                By leveraging SAP's Generative AI Hub—underpinned by the AI Foundation—organizations can democratize access to powerful LLMs, embed them seamlessly in business processes, and maintain robust governance. Mastery of prompt engineering, judicious model selection,
+                                and a structured rollout roadmap are key to unlocking generative AI's potential for solving critical business problems.
+                            </p>
 
-    <footer>
-        <h3>References</h3>
-        <p>
-            SAP SE. (n.d.-a). <em>Exploring generative AI Hub in SAP AI Core</em>. SAP Learning. Retrieved July 8, 2025, from https://learning.sap.com/learning-journeys/solving-your-business-problems-using-prompts-and-llms-in-sap-s-generative-ai-hub/exploring-generative-ai-hub-in-sap-ai-core
-        </p>
-        <p>
-            SAP SE. (n.d.-b). <em>Generative AI Hub in SAP AI Core</em>. SAP Help Portal. Retrieved July 8, 2025, from https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core
-        </p>
-        <p>
-            SAP SE. (n.d.-c). <em>Generative AI Hub</em>. SAP AI Launchpad. Retrieved July 8, 2025, from https://help.sap.com/docs/ai-launchpad/sap-ai-launchpad/generative-ai-hub
-        </p>
-        <p>
-            The Wall Street Journal. (2023, May 15). Germany’s SAP expands partnerships with big tech in AI push. Retrieved from https://www.wsj.com/articles/germany-s-sap-expands-partnerships-with-big-tech-in-ai-push-35d765ac
-        </p>
-    </footer>
+                            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e2e6e8;">
+                                <h3 style="color: #373f42; margin-bottom: 1rem;">References</h3>
+                                <div style="font-size: 0.9rem; color: #666; line-height: 1.6;">
+                                    <p>SAP SE. (n.d.-a). <em>Exploring generative AI Hub in SAP AI Core</em>. SAP Learning. Retrieved July 8, 2025, from https://learning.sap.com/learning-journeys/solving-your-business-problems-using-prompts-and-llms-in-sap-s-generative-ai-hub/exploring-generative-ai-hub-in-sap-ai-core</p>
+                                    <p>SAP SE. (n.d.-b). <em>Generative AI Hub in SAP AI Core</em>. SAP Help Portal. Retrieved July 8, 2025, from https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core</p>
+                                    <p>SAP SE. (n.d.-c). <em>Generative AI Hub</em>. SAP AI Launchpad. Retrieved July 8, 2025, from https://help.sap.com/docs/ai-launchpad/sap-ai-launchpad/generative-ai-hub</p>
+                                    <p>The Wall Street Journal. (2023, May 15). Germany's SAP expands partnerships with big tech in AI push. Retrieved from https://www.wsj.com/articles/germany-s-sap-expands-partnerships-with-big-tech-in-ai-push-35d765ac</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-12-medium">
+                        <section>
+                            <h2>More Articles</h2>
+                            <ul class="link-list">
+                                <li><a href="2025-07-01-sap-cx-ai.html">SAP CX + AI: A 2025 Perspective</a></li>
+                                <li><a href="2025-06-28-cdp-personalization.html">Using SAP CDP for Personalization</a></li>
+                                <li><a href="../blogs.html">View All Articles</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="col-6 col-12-medium">
+                        <section>
+                            <h2>Connect with Me</h2>
+                            <p>
+                                Email: <a href="mailto:sundaragiri@gmail.com">sundaragiri@gmail.com</a><br />
+                                LinkedIn: <a href="https://linkedin.com/in/sundaragiri" target="_blank" rel="noopener noreferrer">linkedin.com/in/sundaragiri</a>
+                            </p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div id="copyright">
+            &copy; 2025 Venkata R.S | Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a>
+        </div>
+    </div>
 </body>
-
 </html>
