@@ -36,23 +36,12 @@
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="accessibility.css" />
     
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://images.pexels.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Preload critical fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
-    </noscript>
 </head>
 
 <body>
@@ -90,11 +79,11 @@
                         <div class="col-6 col-12-medium">
                             <p>
                                 Welcome! I'm <strong><span style="color: #6c63ff;">Venkata Sundaragiri</span></strong><br />
-                                SAP Architect | CX Transformation Specialist | AI Strategist & Innovator | LinkedIn Group Founder | Entrepreneur | PromptVault Builder
+                                <span style="font-size: 1.1rem; color: #6b7280;">SAP Architect | CX Transformation Specialist | AI Strategist & Innovator</span>
                             </p>
                             <div style="margin-top: 1.5rem;">
-                                <a href="resume.html" class="button-large" aria-label="Explore my projects and resume">Explore Projects →</a>
-                                <a href="contact.html" class="button-large" style="margin-left: 1rem; background: transparent; border: 2px solid #6c63ff; color: #6c63ff;" aria-label="Get in touch">Get In Touch</a>
+                                <a href="resume.html" class="button-large" aria-label="Explore my projects and resume">Explore Projects</a>
+                                <a href="contact.html" class="button-large button-secondary" style="margin-left: 1rem;" aria-label="Get in touch">Get In Touch</a>
                             </div>
                         </div>
                         <div class="col-6 col-12-medium imp-medium">
@@ -261,33 +250,33 @@
             <div class="container">
                 <header>
                     <h2>Latest Blog Posts</h2>
-                    <p>Swipe or scroll to explore new insights in SAP, AI, and integration.</p>
+                    <p>Explore insights on SAP, AI, and digital transformation</p>
                 </header>
                 <div class="blog-carousel" id="blogCarousel" role="region" aria-label="Latest blog posts carousel">
                     <article class="card">
-                        <h3>SAP CX + AI: A 2025 Perspective</h3>
-                        <p><a href="blogs/2025-07-01-sap-cx-ai.html" aria-label="Read full article about SAP CX and AI">Read more →</a></p>
+                        <h3>SAP CX + AI: The Future of Enterprise Engagement</h3>
+                        <p><a href="blogs/2025-07-01-sap-cx-ai.html" aria-label="Read full article about SAP CX and AI">Read Article</a></p>
                     </article>
                     <article class="card">
-                        <h3>Using SAP CDP for Personalization</h3>
-                        <p><a href="blogs/2025-06-28-cdp-personalization.html" aria-label="Read full article about SAP CDP personalization">Read more →</a></p>
+                        <h3>Using SAP CDP for Real-Time Personalization</h3>
+                        <p><a href="blogs/2025-06-28-cdp-personalization.html" aria-label="Read full article about SAP CDP personalization">Read Article</a></p>
                     </article>
                     <article class="card">
-                        <h3>Mastering SAP CPI for BTP Success</h3>
-                        <p><a href="blogs/2025-06-15-vtp-cloud-integration.html" aria-label="Read full article about SAP CPI and BTP">Read more →</a></p>
+                        <h3>Applying Joule in Sales Cloud V2</h3>
+                        <p><a href="blogs/joule-in-salescloud.html" aria-label="Read full article about SAP Joule">Read Article</a></p>
                     </article>
                     <article class="card">
-                        <h3>Digital Transformation Strategies</h3>
-                        <p><a href="blogs/2025-06-10-digital-transformation.html" aria-label="Read full article about digital transformation">Read more →</a></p>
+                        <h3>S/4HANA to FSM Integration Architecture</h3>
+                        <p><a href="blogs/s4hana-fsm-architecture.html" aria-label="Read full article about S/4HANA FSM integration">Read Article</a></p>
                     </article>
                     <article class="card">
-                        <h3>Future of Enterprise AI</h3>
-                        <p><a href="blogs/2025-06-05-enterprise-ai.html" aria-label="Read full article about enterprise AI">Read more →</a></p>
+                        <h3>Solving Business Problems with Generative AI</h3>
+                        <p><a href="blogs/2025-07-08-solvingBusinessProblemsGenAI.html" aria-label="Read full article about generative AI">Read Article</a></p>
                     </article>
                 </div>
                 <div style="text-align: center; margin-top: 1rem;" role="group" aria-label="Blog carousel navigation">
-                    <button type="button" onclick="scrollCarousel(-1)" aria-label="Scroll to previous blog posts" title="Previous posts">⬅️ Previous</button>
-                    <button type="button" onclick="scrollCarousel(1)" aria-label="Scroll to next blog posts" title="Next posts">Next ➡️</button>
+                    <button type="button" onclick="scrollCarousel(-1)" aria-label="Scroll to previous blog posts" title="Previous posts">← Previous</button>
+                    <button type="button" onclick="scrollCarousel(1)" aria-label="Scroll to next blog posts" title="Next posts">Next →</button>
                 </div>
             </div>
         </section>
@@ -303,7 +292,7 @@
                             <ul class="link-list">
                                 <li><a href="blogs/2025-07-01-sap-cx-ai.html">SAP CX + AI: A 2025 Perspective</a></li>
                                 <li><a href="blogs/2025-06-28-cdp-personalization.html">Using SAP CDP for Real-Time Personalization</a></li>
-                                <li><a href="blogs/2025-06-15-vtp-cloud-integration.html">Mastering SAP CPI for BTP Success</a></li>
+                                <li><a href="blogs/joule-in-salescloud.html">Applying Joule in Sales Cloud V2</a></li>
                             </ul>
                         </section>
                     </div>
