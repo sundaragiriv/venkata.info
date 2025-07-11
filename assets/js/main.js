@@ -4,48 +4,34 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-(function($) {
+(function() {
+    const window = globalThis.window;
+    const document = window.document;
+    const body = document.body;
 
-	var $window = $(window),
-		$body = $('body');
+    // Breakpoints.
+    // TODO: Implement a vanilla JavaScript alternative for breakpoints
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:  [ '1281px',  '1680px' ],
-			large:   [ '981px',   '1280px' ],
-			medium:  [ '737px',   '980px'  ],
-			small:   [ null,      '736px'  ]
-		});
+    // Nav.
 
-	// Nav.
+    // Title Bar.
+    const titleBar = document.createElement('div');
+    titleBar.id = 'titleBar';
+    titleBar.innerHTML = `
+		<a href="#navPanel" class="toggle"></a>
+		<span class="title">${document.getElementById('logo').innerHTML}</span>
+	`;
+    body.appendChild(titleBar);
 
-		// Title Bar.
-			$(
-				'<div id="titleBar">' +
-					'<a href="#navPanel" class="toggle"></a>' +
-					'<span class="title">' + $('#logo').html() + '</span>' +
-				'</div>'
-			)
-				.appendTo($body);
+    // Panel.
+    const navPanel = document.createElement('div');
+    navPanel.id = 'navPanel';
+    navPanel.innerHTML = `
+		<nav>
+			${document.getElementById('nav').innerHTML}
+		</nav>
+	`;
+    body.appendChild(navPanel);
 
-		// Panel.
-			$(
-				'<div id="navPanel">' +
-					'<nav>' +
-						$('#nav').navList() +
-					'</nav>' +
-				'</div>'
-			)
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'left',
-					target: $body,
-					visibleClass: 'navPanel-visible'
-				});
-
-})(jQuery);
+    // TODO: Implement panel functionality using vanilla JavaScript
+})();

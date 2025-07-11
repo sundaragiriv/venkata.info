@@ -75,38 +75,11 @@
             font-style: italic;
         }
         
-        .back-to-blogs {
-            background-image: linear-gradient(to bottom, #ed391b, #ce1a00);
-            display: inline-block;
-            background-color: #6c63ff;
-            color: #fff !important;
-            text-decoration: none;
-            font-size: 1.2em;
-            height: 2em;
-            line-height: 2.125em;
-            font-weight: 300;
-            padding: 0 30px;
-            outline: 0;
-            border-radius: 10px;
-            box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.75), 
-                        inset 0px 2px 0px 0px rgba(255, 192, 192, 0.5), 
-                        inset 0px 0px 0px 2px rgba(255, 96, 96, 0.85), 
-                        3px 3px 3px 1px rgba(0, 0, 0, 0.15);
-            text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
-            margin-bottom: 2rem;
-        }
-        
-        .back-to-blogs:hover {
-            background-image: linear-gradient(to bottom, #fd492b, #6c63ff);
-            background-color: #6c63ff;
-            transform: translateY(-2px);
-            color: #fff !important;
-        }
+
     </style>
 </head>
 
-<body>
+<body class="blog-page">
     <div id="page-wrapper">
         <!-- Header -->
         <section id="header">
@@ -136,7 +109,7 @@
         <section id="content">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-8 col-12-medium">
                         <section>
                             <a href="../blogs.html" class="back-to-blogs">← Back to Blog</a>
                             
@@ -192,6 +165,25 @@
 
                                 <h3>Next Steps</h3>
                                 <p>If you're considering AI integration in your SAP CX implementation, start with a comprehensive assessment of your current data architecture and customer journey mapping. This foundation will guide your AI strategy and ensure successful implementation.</p>
+                            </div>
+                        </section>
+                    </div>
+                    
+                    <div class="col-4 col-12-medium">
+                        <section>
+                            <h3>More Tech Articles</h3>
+                            <ul class="link-list">
+                                <li><a href="2025-07-08-solvingBusinessProblemsGenAI.html">Solving Business Problems with AI</a></li>
+                                <li><a href="s4hana-fsm-architecture.html">S/4HANA to FSM Integration</a></li>
+                                <li><a href="joule-in-salescloud.html">Joule in Sales Cloud V2</a></li>
+                                <li><a href="2025-06-28-cdp-personalization.html">SAP CDP for Personalization</a></li>
+                                <li><a href="../blogs.html">View All Tech Articles</a></li>
+                            </ul>
+                            
+                            <div style="background: rgba(108, 99, 255, 0.05); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                                <h4 style="color: #373f42; margin-bottom: 1rem;">Explore More</h4>
+                                <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">Discover Vedic wisdom and consciousness</p>
+                                <a href="../personal.html" class="button-large" style="font-size: 0.9rem; padding: 0 15px; height: 1.6em; line-height: 1.7em;">Veda & Life →</a>
                             </div>
                         </section>
                     </div>

@@ -67,7 +67,23 @@
                     <div class="col-12 d-flex justify-content-between flex-wrap">
                         <!-- Logo -->
                         <h1 id="logo">
-                            <a href="index.html" aria-label="Venkata R.S Homepage">Venkata R.S</a>
+                            <a href="index.html" aria-label="Venkata R.S Homepage" style="display: flex; align-items: center; gap: 0.5rem;">
+                                <svg width="40" height="40" viewBox="0 0 40 40" style="flex-shrink: 0;">
+                                    <defs>
+                                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                            <stop offset="50%" style="stop-color:#6366f1;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="20" cy="20" r="18" fill="url(#logoGradient)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                                    <text x="20" y="26" text-anchor="middle" fill="white" font-family="Yanone Kaffeesatz, sans-serif" font-size="16" font-weight="600">VRS</text>
+                                    <circle cx="20" cy="8" r="2" fill="rgba(255,255,255,0.8)"/>
+                                    <circle cx="32" cy="20" r="1.5" fill="rgba(255,255,255,0.6)"/>
+                                    <circle cx="8" cy="20" r="1.5" fill="rgba(255,255,255,0.6)"/>
+                                </svg>
+                                <span>Venkata R.S</span>
+                            </a>
                         </h1>
 
                         <!-- Navigation -->
@@ -83,6 +99,11 @@
                 </div>
             </div>
 
+            <!-- Banner Separator -->
+            <div style="height: 4px; background: linear-gradient(90deg, #8b5cf6, #6366f1, #3b82f6); position: relative;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);"></div>
+            </div>
+
             <!-- Banner -->
             <div id="banner">
                 <div class="container">
@@ -90,7 +111,7 @@
                         <div class="col-6 col-12-medium">
                             <p>
                                 Welcome! I'm <strong><span style="color: #6c63ff;">Venkata Sundaragiri</span></strong><br />
-                                SAP Architect | CX Transformation Specialist | AI Strategist & Innovator | LinkedIn Group Founder | Entrepreneur | PromptVault Builder
+                                SAP Architect | CX Transformation Specialist | AI Strategist & Innovator | Entrepreneur | PromptEngineer | Life Coach
                             </p>
                             <div style="margin-top: 1.5rem;">
                                 <a href="resume.html" class="button-large" aria-label="Explore my projects and resume">Explore Projects →</a>
@@ -98,11 +119,11 @@
                             </div>
                         </div>
                         <div class="col-6 col-12-medium imp-medium">
-                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" 
-                                 alt="Professional consultant working at desk with laptop and documents" 
+                            <img src="images/CXAI2.png" 
+                                 alt="Modern business professional working with technology and data analytics" 
                                  width="500" height="340"
                                  loading="lazy" 
-                                 style="width: 100%; max-height: 340px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);" />
+                                 style="width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);" />
                         </div>
                     </div>
                 </div>
@@ -113,14 +134,18 @@
         <main id="main-content">
         <section id="features">
             <div class="container">
+                <header style="text-align: center; margin-bottom: 3rem;">
+                    <h2 style="font-size: 2.2em; color: #1e293b; margin-bottom: 0.5rem; font-weight: 600;">Core Expertise & Strengths</h2>
+                    <p style="font-size: 1.2em; color: #64748b; max-width: 600px; margin: 0 auto;">Specialized areas where I deliver exceptional value to enterprise clients</p>
+                </header>
                 <div class="row">
                     <div class="col-3 col-6-medium col-12-small">
                         <section class="card">
                             <div class="bordered-feature-image">
-                                <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg" 
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=150&fit=crop&crop=center" 
                                      alt="Customer experience and digital transformation" 
                                      width="300" height="150"
-                                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;" 
+                                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" 
                                      loading="lazy" />
                             </div>
                             <h2>Customer Experience</h2>
@@ -130,10 +155,10 @@
                     <div class="col-3 col-6-medium col-12-small">
                         <section class="card">
                             <div class="bordered-feature-image">
-                                <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" 
+                                <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg" 
                                      alt="Enterprise solution architecture and planning" 
                                      width="300" height="150"
-                                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;" 
+                                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" 
                                      loading="lazy" />
                             </div>
                             <h2>Solution Architecture</h2>
@@ -143,10 +168,10 @@
                     <div class="col-3 col-6-medium col-12-small">
                         <section class="card">
                             <div class="bordered-feature-image">
-                                <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg" 
+                                <img src="https://images.pexels.com/photos/574069/pexels-photo-574069.jpeg" 
                                      alt="System integration and cloud platform development" 
                                      width="300" height="150"
-                                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;" 
+                                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" 
                                      loading="lazy" />
                             </div>
                             <h2>Integration & BTP</h2>
@@ -156,10 +181,10 @@
                     <div class="col-3 col-6-medium col-12-small">
                         <section class="card">
                             <div class="bordered-feature-image">
-                                <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" 
+                                <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg" 
                                      alt="Artificial intelligence and data analytics" 
                                      width="300" height="150"
-                                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;" 
+                                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" 
                                      loading="lazy" />
                             </div>
                             <h2>AI & Analytics</h2>
@@ -182,10 +207,10 @@
                                 <h3>SAP Architect, AI Strategist, and CX Leader</h3>
                             </header>
                             <div class="feature-image">
-                                <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" 
+                                <img src="images/pic05.jpg"
                                      alt="Professional business consultant in modern office environment" 
                                      width="400" height="200"
-                                     style="width: 100%; height: 200px; object-fit: cover; border-radius: 6px;" 
+                                     style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" 
                                      loading="lazy" />
                             </div>
                             <p>
@@ -202,11 +227,11 @@
                                 <h3>What I deliver</h3>
                             </header>
                             <ul class="check-list">
-                                <li>SAP CX / S/4HANA Architecture</li>
-                                <li>FSM, CPQ, Emarsys, CDC, CDP</li>
-                                <li>Integration using SAP BTP & CPI</li>
-                                <li>AI in CX, SAP Joule & Analytics</li>
-                                <li>Quote-to-Cash Transformation</li>
+                                <li><img src="https://logos-world.net/wp-content/uploads/2021/02/SAP-Logo.png" alt="SAP" style="width: 24px; height: 12px; margin-right: 8px; vertical-align: middle;"> SAP CX / S/4HANA Architecture</li>
+                                <li><img src="https://logos-world.net/wp-content/uploads/2021/02/SAP-Logo.png" alt="SAP" style="width: 24px; height: 12px; margin-right: 8px; vertical-align: middle;"> FSM, CPQ, Emarsys, CDC, CDP</li>
+                                <li><img src="https://logos-world.net/wp-content/uploads/2021/02/SAP-Logo.png" alt="SAP" style="width: 24px; height: 12px; margin-right: 8px; vertical-align: middle;"> Integration using SAP BTP & CPI</li>
+                                <li><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="AI" style="width: 16px; height: 16px; margin-right: 8px; vertical-align: middle;"> AI in CX, SAP Joule & Analytics</li>
+                                <li><img src="https://logos-world.net/wp-content/uploads/2021/02/SAP-Logo.png" alt="SAP" style="width: 24px; height: 12px; margin-right: 8px; vertical-align: middle;"> Quote-to-Cash Transformation</li>
                             </ul>
                         </section>
                     </div>
@@ -220,9 +245,10 @@
                             </header>
                             <ul class="quote-list">
                                 <li>
-                                    <img src="https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg" 
-                                         alt="Professional headshot of Sr. Director at Honeywell" 
+                                    <img src="https://logos-world.net/wp-content/uploads/2020/11/Honeywell-Logo.png" 
+                                         alt="Honeywell company logo" 
                                          width="60" height="60"
+                                         style="object-fit: contain; background: #f8f9fa; padding: 8px;"
                                          loading="lazy" />
                                     <div>
                                         <p>"Venkata transformed our CRM & CX landscape with precision and clarity."</p>
@@ -230,9 +256,10 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg" 
-                                         alt="Professional headshot of VP at Carlisle Roofing" 
+                                    <img src="https://logos-world.net/wp-content/uploads/2021/11/Carlisle-Logo.png" 
+                                         alt="Carlisle company logo" 
                                          width="60" height="60"
+                                         style="object-fit: contain; background: #f8f9fa; padding: 8px;"
                                          loading="lazy" />
                                     <div>
                                         <p>"His architecture simplified operations across 15 business units."</p>
@@ -240,10 +267,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <img src="https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg" 
-                                         alt="Professional headshot of Director at LB Foster" 
-                                         width="60" height="60"
-                                         loading="lazy" />
+                                    <div style="width: 60px; height: 60px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; flex-shrink: 0;">LB</div>
                                     <div>
                                         <p>"Thought leader in AI-powered SAP platforms."</p>
                                         <span>Director, LB Foster (2024)</span>
@@ -397,7 +421,131 @@
                     this.style.display = 'none';
                 });
             });
+            
+            // Add modern animations
+            addModernAnimations();
+            initFixedHeader();
         });
+        
+        function initFixedHeader() {
+            const header = document.getElementById('header');
+            if (!header) return;
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+        
+        function addModernAnimations() {
+            // Animate cards on scroll
+            const cards = document.querySelectorAll('.card, #content section');
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'slideInUp 0.6s ease-out forwards';
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, observerOptions);
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                cardObserver.observe(card);
+            });
+            
+            // Add modern hover effects to images
+            const featureImages = document.querySelectorAll('.feature-image img, .bordered-feature-image img');
+            featureImages.forEach(img => {
+                img.style.transition = 'transform 0.3s ease';
+            });
+            
+            // Add modern hover effects to links
+            const links = document.querySelectorAll('.link-list a');
+            links.forEach(link => {
+                link.style.transition = 'all 0.3s ease';
+                link.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(8px)';
+                    this.style.color = '#8b5cf6';
+                });
+                link.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                    this.style.color = '';
+                });
+            });
+            
+            // Add smooth scroll for navigation links
+            const navLinks = document.querySelectorAll('#nav a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .link-list a {
+                transition: all 0.3s ease !important;
+                color: #a1a1aa !important;
+            }
+            
+            .link-list a:hover {
+                color: #8b5cf6 !important;
+            }
+            
+            .feature-image img {
+                transition: transform 0.3s ease;
+            }
+            
+            .feature-image:hover img {
+                transform: scale(1.05) rotate(1deg);
+            }
+            
+            .bordered-feature-image:hover img {
+                transform: scale(1.08) rotate(-1deg);
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>

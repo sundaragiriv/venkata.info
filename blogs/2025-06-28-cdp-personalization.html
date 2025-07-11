@@ -75,38 +75,11 @@
             font-style: italic;
         }
         
-        .back-to-blogs {
-            background-image: linear-gradient(to bottom, #ed391b, #ce1a00);
-            display: inline-block;
-            background-color: #6c63ff;
-            color: #fff !important;
-            text-decoration: none;
-            font-size: 1.2em;
-            height: 2em;
-            line-height: 2.125em;
-            font-weight: 300;
-            padding: 0 30px;
-            outline: 0;
-            border-radius: 10px;
-            box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.75), 
-                        inset 0px 2px 0px 0px rgba(255, 192, 192, 0.5), 
-                        inset 0px 0px 0px 2px rgba(255, 96, 96, 0.85), 
-                        3px 3px 3px 1px rgba(0, 0, 0, 0.15);
-            text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
-            margin-bottom: 2rem;
-        }
-        
-        .back-to-blogs:hover {
-            background-image: linear-gradient(to bottom, #fd492b, #6c63ff);
-            background-color: #6c63ff;
-            transform: translateY(-2px);
-            color: #fff !important;
-        }
+
     </style>
 </head>
 
-<body>
+<body class="blog-page">
     <div id="page-wrapper">
         <!-- Header -->
         <section id="header">
@@ -136,7 +109,7 @@
         <section id="content">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-8 col-12-medium">
                         <section>
                             <a href="../blogs.html" class="back-to-blogs">← Back to Blog</a>
                             
@@ -300,6 +273,29 @@
                                 <p>SAP CDP provides the foundation for delivering truly personalized customer experiences in real-time. Success depends on having the right data architecture, privacy frameworks, and continuous optimization processes in place.</p>
 
                                 <p>Organizations that master real-time personalization will create deeper customer relationships, drive higher engagement, and ultimately achieve better business outcomes. The key is to start with clear objectives, implement incrementally, and always keep the customer experience at the center of your strategy.</p>
+                            </div>
+                        </section>
+                    </div>
+                    
+                    <div class="col-4 col-12-medium">
+                        <section class="sidebar">
+                            <h3>Related Articles</h3>
+                            <ul class="link-list">
+                                <li><a href="2025-07-01-sap-cx-ai.html">SAP CX + AI Integration</a></li>
+                                <li><a href="2025-07-08-solvingBusinessProblemsGenAI.html">Business Problems with AI</a></li>
+                                <li><a href="joule-in-salescloud.html">Joule in Sales Cloud</a></li>
+                                <li><a href="s4hana-fsm-architecture.html">S/4HANA Integration</a></li>
+                                <li><a href="../blogs.html">All Tech Articles</a></li>
+                            </ul>
+                            
+                            <div style="background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-top: 2rem;">
+                                <h4 style="color: #373f42; margin-bottom: 1rem;">Topics</h4>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem; color: #666;">👥 Customer Experience</li>
+                                    <li style="margin-bottom: 0.5rem; color: #666;">📊 Real-time Analytics</li>
+                                    <li style="margin-bottom: 0.5rem; color: #666;">🤖 AI & Personalization</li>
+                                    <li style="margin-bottom: 0.5rem; color: #666;">🔗 Data Integration</li>
+                                </ul>
                             </div>
                         </section>
                     </div>
