@@ -66,13 +66,17 @@ html {
 
 body {
     background: #ffffff;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     color: #475569;
     font-size: 13.5pt;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     line-height: 1.85em;
     font-weight: 300;
     min-height: 100vh;
+<<<<<<< Updated upstream
 =======
     color: #1a1a1a;
     font-size: 16px;
@@ -82,6 +86,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 >>>>>>> 253448b77490a2c15eafcb0378658aff9e20fcac
+=======
+>>>>>>> Stashed changes
 }
 
 input, textarea, select {
@@ -216,6 +222,20 @@ h1#logo {
     margin: 0;
     background: none;
     border: none;
+<<<<<<< Updated upstream
+=======
+}
+
+h1#logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1#logo:hover {
+    transform: none;
+    background: none;
+    color: #8b5cf6;
+>>>>>>> Stashed changes
 }
 
 h1#logo a {
@@ -491,11 +511,15 @@ h1#logo a {
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     border: 2px solid #8b5cf6;
 =======
     border: 3px solid #e5e7eb;
 >>>>>>> 253448b77490a2c15eafcb0378658aff9e20fcac
+=======
+    border: 2px solid #8b5cf6;
+>>>>>>> Stashed changes
     flex-shrink: 0;
     box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
 }
@@ -530,10 +554,13 @@ h1#logo a {
 <<<<<<< HEAD
     top: 0.7em;
     color: #8b5cf6;
+<<<<<<< Updated upstream
 =======
     top: 0.75rem;
     color: #10b981;
 >>>>>>> 253448b77490a2c15eafcb0378658aff9e20fcac
+=======
+>>>>>>> Stashed changes
     font-weight: bold;
     font-size: 1.1rem;
 }
@@ -917,11 +944,35 @@ h1#logo a {
 
 /* Blog Section */
 #blog-section {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     background: #fafbfc;
     border-top: 1px solid #f1f5f9;
     padding: 60px 0;
     color: #1e293b;
+<<<<<<< Updated upstream
+=======
+}
+
+#blog-section header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+#blog-section header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #8b5cf6, #6366f1, #3b82f6);
+    border-radius: 2px;
+>>>>>>> Stashed changes
 }
 
 #blog-section header {
@@ -993,7 +1044,10 @@ h1#logo a {
 }
 
 .blog-carousel .card {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     background: rgba(255, 255, 255, 0.9);
     color: #1e293b;
     border-radius: 16px;
@@ -1038,6 +1092,7 @@ h1#logo a {
     margin-bottom: 0.8rem;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-weight: 600;
+<<<<<<< Updated upstream
 =======
     background: #ffffff;
     border-radius: 1rem;
@@ -1064,6 +1119,8 @@ h1#logo a {
     margin-bottom: 1rem;
     font-weight: 700;
 >>>>>>> 253448b77490a2c15eafcb0378658aff9e20fcac
+=======
+>>>>>>> Stashed changes
     line-height: 1.3;
     flex-grow: 1;
 }
@@ -1077,18 +1134,27 @@ h1#logo a {
     color: #0066cc;
     font-weight: 600;
     text-decoration: none;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     color: #8b5cf6;
     font-weight: 500;
     transition: all 0.3s ease;
 =======
 >>>>>>> 253448b77490a2c15eafcb0378658aff9e20fcac
+=======
+    color: #8b5cf6;
+    font-weight: 500;
+    transition: all 0.3s ease;
+>>>>>>> Stashed changes
     font-size: 0.95rem;
     transition: color 0.3s ease;
 }
 
 .blog-carousel .card a:hover {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     color: #6366f1;
     text-decoration: underline;
 =======
@@ -1098,7 +1164,10 @@ h1#logo a {
 
 /* Footer */
 #footer {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
     padding: 60px 0;
     color: #e2e8f0;
@@ -1116,6 +1185,7 @@ h1#logo a {
     color: #cbd5e1;
     transition: all 0.3s ease;
     text-decoration: none;
+<<<<<<< Updated upstream
 }
 
 #footer a:hover {
@@ -1142,11 +1212,21 @@ h1#logo a {
 #footer a:hover {
     color: #0066cc;
 >>>>>>> 253448b77490a2c15eafcb0378658aff9e20fcac
+=======
+}
+
+#footer a:hover {
+    color: #8b5cf6;
+    text-decoration: underline;
+>>>>>>> Stashed changes
 }
 
 /* Copyright */
 #copyright {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     background: #0f172a;
     border-top: solid 1px rgba(139, 92, 246, 0.1);
     text-align: center;
@@ -1163,6 +1243,7 @@ h1#logo a {
 #copyright a:hover {
     color: #6366f1;
     text-decoration: underline;
+<<<<<<< Updated upstream
 =======
     background: #1a1a1a;
     text-align: center;
@@ -1178,6 +1259,8 @@ h1#logo a {
 #copyright a:hover {
     color: #ffffff;
 >>>>>>> 253448b77490a2c15eafcb0378658aff9e20fcac
+=======
+>>>>>>> Stashed changes
 }
 
 /* Utility Classes */
@@ -1188,7 +1271,10 @@ h1#logo a {
 
 /* Button Styling */
 button {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     background: linear-gradient(135deg, #8b5cf6, #6366f1);
     color: #fff;
     border: none;
@@ -1200,6 +1286,7 @@ button {
     font-weight: 400;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+<<<<<<< Updated upstream
 =======
     background: #0066cc;
     color: #ffffff;
@@ -1213,6 +1300,8 @@ button {
     transition: all 0.3s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 >>>>>>> 253448b77490a2c15eafcb0378658aff9e20fcac
+=======
+>>>>>>> Stashed changes
     margin: 0 0.5rem;
     position: relative;
     overflow: hidden;
@@ -1230,7 +1319,10 @@ button::before {
 }
 
 button:hover {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     background: linear-gradient(135deg, #7c3aed, #5b21b6);
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
@@ -1238,6 +1330,7 @@ button:hover {
 
 button:hover::before {
     left: 100%;
+<<<<<<< Updated upstream
 }
 
 button:active {
@@ -1261,12 +1354,26 @@ button:active {
 button:focus {
     outline: 2px solid #0066cc;
 >>>>>>> 253448b77490a2c15eafcb0378658aff9e20fcac
+=======
+}
+
+button:active {
+    transform: translateY(0) scale(1.01);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+button:focus {
+    outline: 2px solid #8b5cf6;
+>>>>>>> Stashed changes
     outline-offset: 2px;
 }
 
 /* Back to Blog Button */
 .back-to-blogs {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     display: inline-block;
     background: linear-gradient(135deg, #8b5cf6, #6366f1);
     color: #fff !important;
@@ -1307,6 +1414,7 @@ button:focus {
 
 .back-to-blogs:hover::before {
     left: 100%;
+<<<<<<< Updated upstream
 }
 
 .back-to-blogs:active {
@@ -1340,6 +1448,13 @@ button:focus {
     transform: translateY(0);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 >>>>>>> 253448b77490a2c15eafcb0378658aff9e20fcac
+=======
+}
+
+.back-to-blogs:active {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
+>>>>>>> Stashed changes
 }
 
 /* Responsive Design */
@@ -1469,6 +1584,7 @@ button:focus {
     }
 }
 
+<<<<<<< Updated upstream
 /* Skills Page Specific Styles */
 .skill-grid {
     display: grid;
@@ -1687,6 +1803,8 @@ button:focus {
     }
 }
 
+=======
+>>>>>>> Stashed changes
 /* Blog Page Specific Styles */
 .blog-page #content {
     background: #ffffff;
