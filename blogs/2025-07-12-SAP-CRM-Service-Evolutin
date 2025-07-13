@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Evolution of SAP Service: From CRM to the Intelligent Cloud</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony -->
+    <!-- Application Structure Plan: A top-down narrative flow is chosen for usability. It starts with a high-level visual summary of the transformation (the core user question: "what's changing?"). It then drills down into the main interactive component, the "Functionality Explorer," which allows users to compare specific features based on their interests. This is more engaging than a static table. The SPA then highlights the key technological driver (AI) and the practical process (Migration Path) in distinct, digestible sections. This structure guides the user from the strategic "what" and "why" to the tactical "how," making a complex topic accessible. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Architectural Shift (CRM -> Cloud Suite). Goal: Explain relationship. Viz: HTML/CSS diagram. Interaction: None, static visual anchor. Justification: Provides an immediate, clear mental model of the old vs. new state. Method: Tailwind CSS Flexbox.
+        - Report Info: Functionality mapping (Table 1). Goal: Compare. Viz: Interactive card-based explorer. Interaction: User clicks on functionality category filters to dynamically update "Past" vs. "Future" views. Justification: Transforms a dense table into an engaging, user-driven discovery tool. Method: JS data objects and DOM manipulation.
+        - Report Info: Distribution of functions. Goal: Inform/Summarize. Viz: Donut Chart. Interaction: Hover tooltips. Justification: Provides a quick quantitative overview of where functionalities now reside. Library: Chart.js (Canvas).
+        - Report Info: AI capabilities list. Goal: Inform/Organize. Viz: Interactive cards with icons. Interaction: Hover to reveal more detail. Justification: Makes abstract AI features tangible and visually interesting. Method: HTML/CSS with JS for hover effects.
+        - Report Info: Migration steps. Goal: Explain process. Viz: Step-by-step flow diagram. Interaction: Hover to highlight steps. Justification: Simplifies a complex process into a clear, linear visual path. Method: HTML/CSS with Tailwind.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: color 0.3s, border-color 0.3s; }
+        .nav-link.active { color: #0D9488; border-bottom-color: #0D9488; }
+        .nav-link:hover { color: #0D9488; }
+        .filter-btn { transition: background-color 0.3s, color 0.3s; }
+        .filter-btn.active { background-color: #0D9488; color: white; }
+        .diagram-box { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        .card { transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+        .chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 300px; max-height: 350px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+
+        /* Modal specific styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0D9488;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-stone-100 text-slate-800">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl text-teal-700">SAP Service Evolution</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#transformation" class="nav-link px-3 py-2 text-sm font-medium text-slate-600 border-b-2 border-transparent">Transformation</a>
+                        <a href="#explorer" class="nav-link px-3 py-2 text-sm font-medium text-slate-600 border-b-2 border-transparent">Explorer</a>
+                        <a href="#ai-spotlight" class="nav-link px-3 py-2 text-sm font-medium text-slate-600 border-b-2 border-transparent">AI Spotlight</a>
+                        <a href="#migration" class="nav-link px-3 py-2 text-sm font-medium text-slate-600 border-b-2 border-transparent">Migration Path</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        
+        <section id="hero" class="text-center mb-16 md:mb-24">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-4">The Future of Service is Here</h1>
+            <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-600">Explore the strategic transformation from the on-premise SAP CRM 7.0 to the agile, intelligent, and interconnected cloud ecosystem, led by SAP Service Cloud V2.</p>
+        </section>
+
+        <section id="transformation" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">A Fundamental Architectural Shift</h2>
+                <p class="mt-2 max-w-2xl mx-auto text-lg text-slate-600">The journey from SAP CRM 7.0 is not an upgrade, but a re-platforming from a monolithic system to a composable suite of specialized, best-in-class cloud solutions.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-4">
+                <div class="w-full lg:w-1/3 p-6 diagram-box bg-white rounded-xl border border-slate-200">
+                    <h3 class="text-center text-xl font-semibold text-slate-700 mb-4">The Past: Monolithic Core</h3>
+                    <div class="flex justify-center">
+                         <div class="bg-slate-200 text-slate-800 p-8 rounded-lg text-center w-64">
+                            <span class="text-2xl font-bold">SAP CRM 7.0</span>
+                            <p class="text-sm mt-1">(On-Premise)</p>
+                            <div class="mt-4 space-y-2 text-left text-sm">
+                                <p>Sales</p>
+                                <p>Service</p>
+                                <p>Marketing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-5xl text-teal-500 transform lg:rotate-0 rotate-90">→</div>
+                
+                <div class="w-full lg:w-2/3 p-6 diagram-box bg-white rounded-xl border border-slate-200">
+                    <h3 class="text-center text-xl font-semibold text-slate-700 mb-4">The Future: Composable Cloud Suite</h3>
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row justify-around items-center gap-4 text-center">
+                            <div class="bg-teal-100 text-teal-800 p-4 rounded-lg flex-1">
+                                <span class="font-bold">Service Cloud V2</span>
+                                <p class="text-xs">Customer Engagement</p>
+                            </div>
+                            <div class="bg-sky-100 text-sky-800 p-4 rounded-lg flex-1">
+                                <span class="font-bold">S/4HANA Service</span>
+                                <p class="text-xs">Core Operations</p>
+                            </div>
+                             <div class="bg-indigo-100 text-indigo-800 p-4 rounded-lg flex-1">
+                                <span class="font-bold">Field Service</span>
+                                <p class="text-xs">On-Site Execution</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <div class="inline-block bg-amber-100 text-amber-800 px-4 py-2 rounded-lg">
+                                <span class="font-bold">SAP Business Technology Platform (BTP)</span>
+                                <p class="text-xs">Integration & Extensibility Fabric</p>
+                            </div>
+                        </div>
+                         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg">
+                            <span class="text-2xl" title="Artificial Intelligence">🧠</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="explorer" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">Interactive Functionality Explorer</h2>
+                <p class="mt-2 max-w-2xl mx-auto text-lg text-slate-600">Discover how key service functionalities from SAP CRM 7.0 are transformed in the new cloud ecosystem. Select a category to begin.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8" id="filter-container">
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-slate-500 text-center md:text-left">Past: SAP CRM 7.0</h3>
+                        <div id="crm-content" class="space-y-4">
+                        </div>
+                    </div>
+                     <div>
+                        <h3 class="text-xl font-semibold mb-4 text-teal-600 text-center md:text-left">Future: SAP Cloud Ecosystem</h3>
+                        <div id="cloud-content" class="space-y-4">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-slate-200">
+                     <h3 class="text-xl font-semibold mb-4 text-slate-900 text-center">Functionality Distribution in the New Ecosystem</h3>
+                     <div class="chart-container">
+                         <canvas id="functionalityDonutChart"></canvas>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-spotlight" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">Spotlight on the Intelligent Enterprise</h2>
+                <p class="mt-2 max-w-2xl mx-auto text-lg text-slate-600">Artificial Intelligence is no longer an add-on; it's natively embedded across the SAP service landscape to drive efficiency and create proactive experiences.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="ai-cards-container">
+            </div>
+        </section>
+
+
+        <section id="migration" class="scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">Your Path to the Cloud</h2>
+                <p class="mt-2 max-w-2xl mx-auto text-lg text-slate-600">The transition is a strategic migration project. Following a structured path ensures a smooth and successful transformation.</p>
+            </div>
+            <div class="relative">
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-300 -translate-y-1/2"></div>
+                <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-8" id="migration-steps-container">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-slate-800 text-white mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-slate-400">
+            <p>This interactive guide is based on the research article "Navigating the Future of Service."</p>
+            <p>&copy; 2025 SAP Technology Analysis. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- LLM Explanation Modal -->
+    <div id="explanationModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button" id="closeModalBtn">&times;</span>
+            <h3 id="modalTitle" class="text-xl font-bold text-slate-900 mb-4"></h3>
+            <div id="modalContent" class="text-slate-700">
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const functionalityData = {
+        'All': {
+            'crm': [{title: 'Select a Category', desc: 'Please select a functionality category above to see how it evolves from SAP CRM 7.0 to the new SAP Cloud Ecosystem.'}],
+            'cloud': [{title: 'The Future Awaits', desc: 'The cloud ecosystem offers specialized, AI-powered solutions for every aspect of customer service.', target: 'Ecosystem'}]
+        },
+        'Core Engagement': {
+            'crm': [
+                { title: 'Service Request/Ticket', desc: 'Managed through a central object for tracking customer issues, inquiries, and complaints.' },
+                { title: 'Customer Interaction Center (CIC)', desc: 'A central tool for agents to handle multi-channel communications like phone and email.' },
+                { title: 'Knowledge Management', desc: 'Basic integration of knowledge articles to help resolve service requests.' },
+                { title: 'SLA Management', desc: 'Functionality to define and monitor service level agreements for response and resolution times.' }
+            ],
+            'cloud': [
+                { title: 'Case Management', desc: 'Enhanced with a visual Case Designer, multi-level categories, advanced workflows, and GenAI-powered summaries and responses.', target: 'Service Cloud V2' },
+                { title: 'Agent Desktop / Customer Hub', desc: 'A completely rebuilt, unified workspace for true omnichannel engagement, reducing clicks and improving agent efficiency.', target: 'Service Cloud V2' },
+                { title: 'Solution Finder', desc: 'Deep integration with external knowledge bases like SharePoint & Confluence, with AI-powered recommendations.', target: 'Service Cloud V2' },
+                { title: 'Advanced SLA Timers', desc: 'More flexible and powerful SLA determination using access sequences, integrated directly into case management.', target: 'Service Cloud V2' }
+            ]
+        },
+        'Back-Office Operations': {
+            'crm': [
+                { title: 'Service Contract Management', desc: 'Handled within CRM to manage long-term service agreements with customers.' },
+                { title: 'In-House Repair', desc: 'Processes for managing the repair of products at an internal service center.' },
+                { title: 'Asset Management (IObjects)', desc: 'Used Individual Objects (IObjects) to represent customer assets for service.' }
+            ],
+            'cloud': [
+                { title: 'Service Contract Management', desc: 'Comprehensive management of contracts, subscriptions, and recurring services with automated billing.', target: 'S/4HANA Service' },
+                { title: 'In-House Repair', desc: 'End-to-end process management from return to re-shipping, with full cost and revenue transparency in the ERP core.', target: 'S/4HANA Service' },
+                { title: 'Intelligent Asset Management', desc: 'Uses robust S/4HANA technical objects (Equipment, Functional Locations) enabling predictive maintenance and IoT integration.', target: 'S/4HANA Service' }
+            ]
+        },
+        'Field Service': {
+            'crm': [
+                { title: 'Field Service', desc: 'Limited capabilities for dispatching technicians, often requiring significant customization or third-party add-ons.' }
+            ],
+            'cloud': [
+                { title: 'Intelligent Field Service', desc: 'A dedicated, best-in-class solution for the "last mile" of service. Features AI-powered scheduling, optimized routing, and a powerful mobile app for technicians with offline capabilities.', target: 'Field Service Management' }
+            ]
+        },
+        'Technical Backbone': {
+            'crm': [
+                { title: 'SAP CRM Middleware', desc: 'Complex proprietary middleware for data replication between CRM and ERP.' },
+                { title: 'One Order Data Model', desc: 'A complex, GUID-based data model for all business transactions.' },
+                { title: 'IPC / CRM Billing', desc: 'Separate engines for pricing and billing logic.' }
+            ],
+            'cloud': [
+                { title: 'BTP Integration Suite', desc: 'Replaced by modern, API-first integration using Cloud Integration, API Management, and Event Mesh for seamless data flow.', target: 'BTP' },
+                { title: 'Simplified S/4HANA Model', desc: 'Redesigned with flat header/item tables and semantic keys for vastly improved performance and analytics.', target: 'S/4HANA Service' },
+                { title: 'S/4HANA Sales Pricing & Billing', desc: 'Uses the powerful, harmonized pricing and billing engines of the S/4HANA core, ensuring data consistency.', target: 'S/4HANA Service' }
+            ]
+        }
+    };
+    
+    const aiData = [
+        { icon: '📄', title: 'GenAI Case Summaries', desc: 'Automatically generates concise, accurate summaries of complex case histories, saving agents valuable time.', platform: 'Service Cloud V2' },
+        { icon: '💬', title: 'AI Email Recommendations', desc: 'Suggests complete email replies based on case context and historical data, ensuring consistent and high-quality communication.', platform: 'Service Cloud V2' },
+        { icon: '📈', title: 'Predictive Maintenance', desc: 'Analyzes asset data and IoT sensor readings to predict potential failures before they happen, enabling proactive service.', platform: 'S/4HANA Service' },
+        { icon: '🗺️', title: 'AI-Based Scheduling', desc: 'Optimizes field technician schedules based on skill, location, traffic, and job priority to maximize efficiency.', platform: 'Field Service' },
+        { icon: '🏷️', title: 'Intelligent Case Categorization', desc: 'Uses machine learning to automatically categorize incoming cases, ensuring they are routed to the correct team instantly.', platform: 'Service Cloud V2' },
+        { icon: '🤝', title: 'Sentiment Analysis', desc: 'Detects customer sentiment (e.g., frustration, satisfaction) in real-time from text communications to guide agent interactions.', platform: 'Service Cloud V2' }
+    ];
+
+    const migrationData = [
+        { step: 1, title: 'Readiness Check', desc: 'Assess current CRM system, customizations, and interfaces to understand project scope.' },
+        { step: 2, title: 'Data Migration', desc: 'Utilize SAP tools to cleanly migrate master and transactional data to the new cloud data models.' },
+        { step: 3, title: 'Re-engineering', desc: 'Rebuild necessary custom logic and UIs on BTP to maintain a "clean core" in the new solutions.' },
+        { step: 4, title: 'Integration Setup', desc: 'Configure pre-packaged integrations on BTP to connect the new cloud applications for end-to-end processes.' },
+        { step: 5, title: 'Adoption & Training', desc: 'Implement a phased rollout and comprehensive change management to ensure user adoption and success.' }
+    ];
+
+    const filterContainer = document.getElementById('filter-container');
+    const crmContent = document.getElementById('crm-content');
+    const cloudContent = document.getElementById('cloud-content');
+    const aiCardsContainer = document.getElementById('ai-cards-container');
+    const migrationStepsContainer = document.getElementById('migration-steps-container');
+
+    const explanationModal = document.getElementById('explanationModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalContent = document.getElementById('modalContent');
+
+    let currentFilter = 'All';
+
+    function getTargetColor(target) {
+        switch(target) {
+            case 'Service Cloud V2': return 'teal';
+            case 'S/4HANA Service': return 'sky';
+            case 'Field Service Management': return 'indigo';
+            case 'BTP': return 'amber';
+            default: return 'slate';
+        }
+    }
+
+    async function getLlmExplanation(type, itemTitle, itemDesc, itemTarget = '') {
+        modalTitle.textContent = `Explaining: ${itemTitle}`;
+        modalContent.innerHTML = '<div class="loading-spinner"></div>';
+        explanationModal.style.display = 'flex'; // Show modal with spinner
+
+        let prompt = '';
+        if (type === 'crm') {
+            prompt = `As an expert SAP CRM analyst, explain the functionality of '${itemTitle}' in SAP CRM 7.0. Describe its primary purpose, typical usage, and inherent limitations or challenges that led to its evolution in modern SAP cloud solutions. Keep the explanation concise and professional, around 100-150 words.`;
+        } else if (type === 'cloud') {
+            prompt = `As an expert SAP cloud architect, explain the advanced capabilities of '${itemTitle}' within the '${itemTarget}' platform. Describe how it improves upon previous on-premise solutions, its key benefits, and how it leverages modern cloud principles. Keep the explanation concise and professional, around 100-150 words.`;
+        }
+
+        try {
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+            
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const result = await response.json();
+
+            if (result.candidates && result.candidates.length > 0 &&
+                result.candidates[0].content && result.candidates[0].content.parts &&
+                result.candidates[0].content.parts.length > 0) {
+                const text = result.candidates[0].content.parts[0].text;
+                modalContent.innerHTML = `<p>${text}</p>`;
+            } else {
+                modalContent.innerHTML = '<p class="text-red-600">Could not retrieve explanation. Please try again.</p>';
+            }
+        } catch (error) {
+            console.error('Error fetching LLM explanation:', error);
+            modalContent.innerHTML = '<p class="text-red-600">An error occurred while fetching the explanation.</p>';
+        }
+    }
+
+    function renderContent() {
+        const data = functionalityData[currentFilter];
+
+        crmContent.innerHTML = data.crm.map(item => `
+            <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                <h4 class="font-semibold text-slate-800">${item.title}</h4>
+                <p class="text-sm text-slate-600 mt-1">${item.desc}</p>
+                <button class="explain-btn mt-3 px-3 py-1 bg-teal-500 text-white rounded-full text-xs hover:bg-teal-600 transition" 
+                        data-type="crm" data-title="${item.title}" data-desc="${item.desc}">
+                    ✨ Explain More
+                </button>
+            </div>
+        `).join('');
+
+        cloudContent.innerHTML = data.cloud.map(item => {
+            const color = getTargetColor(item.target);
+            return `
+                <div class="bg-white p-4 rounded-lg border-2 border-${color}-200 card">
+                    <div class="flex justify-between items-start">
+                        <h4 class="font-semibold text-${color}-700">${item.title}</h4>
+                        <span class="text-xs font-medium bg-${color}-100 text-${color}-800 px-2 py-0.5 rounded-full">${item.target}</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mt-1">${item.desc}</p>
+                    <button class="explain-btn mt-3 px-3 py-1 bg-teal-500 text-white rounded-full text-xs hover:bg-teal-600 transition" 
+                            data-type="cloud" data-title="${item.title}" data-desc="${item.desc}" data-target="${item.target}">
+                        ✨ Explain More
+                    </button>
+                </div>
+            `
+        }).join('');
+
+        document.querySelectorAll('.explain-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const { type, title, desc, target } = e.target.dataset;
+                getLlmExplanation(type, title, desc, target);
+            });
+        });
+    }
+
+    function renderFilters() {
+        filterContainer.innerHTML = Object.keys(functionalityData).map(filter => `
+            <button data-filter="${filter}" class="filter-btn px-4 py-2 text-sm font-medium rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 ${filter === currentFilter ? 'active' : ''}">
+                ${filter}
+            </button>
+        `).join('');
+
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                currentFilter = e.target.dataset.filter;
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                renderContent();
+            });
+        });
+    }
+
+    function renderAiCards() {
+        aiCardsContainer.innerHTML = aiData.map(item => {
+            const color = getTargetColor(item.platform);
+            return `
+            <div class="bg-white p-6 rounded-lg border border-slate-200 card flex flex-col">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-4xl">${item.icon}</span>
+                     <span class="text-xs font-medium bg-${color}-100 text-${color}-800 px-2 py-0.5 rounded-full">${item.platform}</span>
+                </div>
+                <h4 class="font-semibold text-slate-800 text-lg mb-2">${item.title}</h4>
+                <p class="text-sm text-slate-600 flex-grow">${item.desc}</p>
+            </div>
+        `}).join('');
+    }
+
+    function renderMigrationSteps() {
+        migrationStepsContainer.innerHTML = migrationData.map(item => `
+            <div class="flex-1 flex flex-col items-center text-center p-4">
+                <div class="w-12 h-12 flex items-center justify-center bg-teal-600 text-white rounded-full font-bold text-xl shadow-md mb-4">${item.step}</div>
+                <h4 class="font-semibold text-slate-800 mb-1">${item.title}</h4>
+                <p class="text-sm text-slate-500">${item.desc}</p>
+            </div>
+        `).join('');
+    }
+    
+    function renderDonutChart() {
+        const ctx = document.getElementById('functionalityDonutChart').getContext('2d');
+        const dataDistribution = {
+            'Service Cloud V2': 0,
+            'S/4HANA Service': 0,
+            'Field Service Management': 0,
+            'BTP': 0,
+        };
+
+        Object.values(functionalityData).forEach(category => {
+            if (category.cloud) {
+                category.cloud.forEach(item => {
+                    if (dataDistribution.hasOwnProperty(item.target)) {
+                        dataDistribution[item.target]++;
+                    }
+                });
+            }
+        });
+
+        // Destroy existing chart if it exists to prevent re-rendering issues
+        if (window.myDonutChart instanceof Chart) {
+            window.myDonutChart.destroy();
+        }
+
+        window.myDonutChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: Object.keys(dataDistribution),
+                datasets: [{
+                    label: 'Functionality Distribution',
+                    data: Object.values(dataDistribution),
+                    backgroundColor: [
+                        '#14B8A6', // teal-500
+                        '#38BDF8', // sky-400
+                        '#818CF8', // indigo-400
+                        '#FBBF24', // amber-400
+                    ],
+                    borderColor: '#F1F5F9', // stone-100
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: '#1E293B', // slate-800
+                        titleFont: { size: 16 },
+                        bodyFont: { size: 14 },
+                        padding: 12,
+                        cornerRadius: 4
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+    }
+
+    function init() {
+        renderFilters();
+        renderContent();
+        renderAiCards();
+        renderMigrationSteps();
+        renderDonutChart();
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 80) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Modal close functionality
+        closeModalBtn.addEventListener('click', () => {
+            explanationModal.style.display = 'none';
+        });
+        window.addEventListener('click', (event) => {
+            if (event.target == explanationModal) {
+                explanationModal.style.display = 'none';
+            }
+        });
+    }
+
+    init();
+});
+</script>
+</body>
+</html>

@@ -1,14 +1,41 @@
 {
-  "name": "vite-starter",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "venkata-info",
+  "version": "2.0.0",
+  "description": "Professional portfolio website for Venkata R.S - SAP Architect & AI Consultant",
+  "main": "index.html",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "live-server --port=3000 --open=/index.html",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "sass assets/scss/main.scss assets/css/style.css --style=compressed",
+    "build:js": "terser assets/js/app.js -o assets/js/app.min.js --compress --mangle",
+    "watch:css": "sass --watch assets/scss/main.scss:assets/css/style.css",
+    "lint:css": "stylelint assets/scss/**/*.scss",
+    "optimize:images": "imagemin images/* --out-dir=images/optimized",
+    "serve": "http-server -p 8080 -c-1"
   },
+  "keywords": [
+    "SAP",
+    "AI",
+    "Consultant",
+    "Architecture",
+    "Portfolio"
+  ],
+  "author": "Venkata R.S",
+  "license": "MIT",
   "devDependencies": {
-    "vite": "^5.4.2"
-  }
+    "sass": "^1.69.0",
+    "terser": "^5.24.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.1.0",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "live-server": "^1.2.2",
+    "http-server": "^14.1.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }

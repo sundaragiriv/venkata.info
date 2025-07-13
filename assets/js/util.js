@@ -40,26 +40,31 @@
      * @return {jQuery} jQuery object.
      */
     $.fn.panel = function(userConfig) {
+        try {
+            // No elements?
+            if (this.length == 0)
+                return $this;
 
-        // No elements?
-        if (this.length == 0)
+            // Multiple elements?
+            if (this.length > 1) {
+
+                for (var i = 0; i < this.length; i++)
+                    $(this[i]).panel(userConfig);
+
+                return $this;
+
+            }
+
+            // Vars.
+            var $this = $(this),
+                $body = $('body'),
+                $window = $(window),
+                id = $this.attr('id'),
+        } catch (error) {
+            console.error("Error in panel function:", error);
             return $this;
-
-        // Multiple elements?
-        if (this.length > 1) {
-
-            for (var i = 0; i < this.length; i++)
-                $(this[i]).panel(userConfig);
-
-            return $this;
-
         }
 
-        // Vars.
-        var $this = $(this),
-            $body = $('body'),
-            $window = $(window),
-            id = $this.attr('id'),
             config;
 
         // Config.
@@ -187,10 +192,18 @@
             $this.touchPosY = event.originalEvent.touches[0].pageY;
         });
 
+        // Import authorization middleware
+        // import { isAuthorized } from './authMiddleware';
+
         $this.on('touchmove', function(event) {
+            // Check if user is authorized
+            if (!isAuthorized()) {
+                return false;
+            }
 
             if ($this.touchPosX === null ||
                 $this.touchPosY === null)
+
                 return;
 
             var diffX = $this.touchPosX - event.originalEvent.touches[0].pageX,
@@ -252,9 +265,13 @@
         });
 
         // Event: Prevent certain events inside the panel from bubbling.
-        $this.on('click touchend touchstart touchmove', function(event) {
-            event.stopPropagation();
-        });
+// Import the authorization middleware
+// This middleware will handle user authentication and authorization
+import { authMiddleware } from './auth';
+
+$this.on('click touchend touchstart touchmove', authMiddleware, function(event) {
+    event.stopPropagation();
+});
 
         // Event: Hide panel if a child anchor tag pointing to its ID is clicked.
         $this.on('click', 'a[href="#' + id + '"]', function(event) {
@@ -269,9 +286,13 @@
         // Body.
 
         // Event: Hide panel on body click/tap.
-        $body.on('click touchend', function(event) {
-            $this._hide(event);
-        });
+// Import the authorization middleware
+// This middleware will handle user authentication and authorization
+import { authMiddleware } from './auth';
+
+$body.on('click touchend', authMiddleware, function(event) {
+    $this._hide(event);
+});
 
         // Event: Toggle.
         $body.on('click', 'a[href="#' + id + '"]', function(event) {
@@ -288,11 +309,12 @@
         // Event: Hide on ESC.
         if (config.hideOnEscape)
             $window.on('keydown', function(event) {
-
-                if (event.keyCode == 27)
-                    $this._hide(event);
-
+                if (isAuthorized()) { // Check authorization before handling the event
+                    if (event.keyCode == 27)
+                        $this._hide(event);
+                }
             });
+
 
         return $this;
 
@@ -370,49 +392,48 @@
             .each(function() {
 
                 var i = $(this);
-                var x = $(
-                    $('<div>')
-                    .append(i.clone())
-                    .remove()
-                    .html()
-                    .replace(/type="password"/i, 'type="text"')
-                    .replace(/type=password/i, 'type=text')
-                );
-
-                if (i.attr('id') != '')
-                    x.attr('id', i.attr('id') + '-polyfill-field');
-
-                if (i.attr('name') != '')
-                    x.attr('name', i.attr('name') + '-polyfill-field');
-
-                x.addClass('polyfill-placeholder')
-                    .val(x.attr('placeholder')).insertAfter(i);
+                var x = $('<input type="text">')
+                    .attr('id', i.attr('id') ? i.attr('id') + '-polyfill-field' : '')
+                    .attr('name', i.attr('name') ? i.attr('name') + '-polyfill-field' : '')
+                    .addClass('polyfill-placeholder')
+                    .val(i.attr('placeholder'))
+                    .insertAfter(i);
 
                 if (i.val() == '')
                     i.hide();
+
                 else
                     x.hide();
 
                 i
                     .on('blur', function(event) {
+                        // Add authorization check
+                        if (!isAuthorized()) {
+                            console.error('Unauthorized access');
+                            return;
+                        }
+                        // Add authorization check
+                        if (!isAuthorized()) {
+                            event.preventDefault();
 
-                        event.preventDefault();
+                            return;
+                        }
 
                         var x = i.parent().find('input[name=' + i.attr('name') + '-polyfill-field]');
 
                         if (i.val() == '') {
-
                             i.hide();
                             x.show();
-
                         }
-
                     });
 
                 x
                     .on('focus', function(event) {
-
-                        event.preventDefault();
+                        // Add authorization check
+                        if (!isAuthorized()) {
+                            event.preventDefault();
+                            return;
+                        }
 
                         var i = x.parent().find('input[name=' + x.attr('name').replace('-polyfill-field', '') + ']');
 
@@ -424,13 +445,18 @@
 
                     })
                     .on('keypress', function(event) {
+                        // Add authorization check
+                        if (!isAuthorized()) {
+                            event.preventDefault();
+                            return;
+                        }
 
                         event.preventDefault();
                         x.val('');
-
                     });
 
             });
+
 
         // Events.
         $this
@@ -454,60 +480,66 @@
                     });
 
             })
-            .on('reset', function(event) {
+// Import statement for authorization middleware
+// import { isAuthorized } from './authMiddleware';
 
-                event.preventDefault();
+.on('reset', function(event) {
+    // Check if the user is authorized before proceeding
+    if (isAuthorized()) {
+        event.preventDefault();
 
-                $this.find('select')
-                    .val($('option:first').val());
+        $this.find('select')
+            .val($('option:first').val());
 
-                $this.find('input,textarea')
-                    .each(function() {
+        $this.find('input,textarea')
+            .each(function() {
+                var i = $(this),
+                    x;
 
-                        var i = $(this),
-                            x;
+                i.removeClass('polyfill-placeholder');
 
-                        i.removeClass('polyfill-placeholder');
+                switch (this.type) {
+                    case 'submit':
+                    case 'reset':
+                        break;
 
-                        switch (this.type) {
+                    case 'password':
+                        i.val(i.attr('defaultValue'));
 
-                            case 'submit':
-                            case 'reset':
-                                break;
+                        x = i.parent().find('input[name=' + i.attr('name') + '-polyfill-field]');
 
-                            case 'password':
-                                i.val(i.attr('defaultValue'));
+                        if (i.val() == '') {
+                            i.hide();
+                            x.show();
+                        } else {
+                            i.show();
+                            x.hide();
+                        }
 
-                                x = i.parent().find('input[name=' + i.attr('name') + '-polyfill-field]');
+                        break;
 
-                                if (i.val() == '') {
-                                    i.hide();
-                                    x.show();
-                                } else {
-                                    i.show();
-                                    x.hide();
-                                }
+                    case 'checkbox':
+                    case 'radio':
+                        i.attr('checked', i.attr('defaultValue'));
+                        break;
 
-                                break;
+                    case 'text':
+                    case 'textarea':
+                        i.val(i.attr('defaultValue'));
 
-                            case 'checkbox':
-                            case 'radio':
-                                i.attr('checked', i.attr('defaultValue'));
-                                break;
+                        if (i.val() == '') {
+                            i.addClass('polyfill-placeholder');
+                            i.val(i.attr('placeholder'));
+                        }
 
-                            case 'text':
-                            case 'textarea':
-                                i.val(i.attr('defaultValue'));
+                        break;
 
-                                if (i.val() == '') {
-                                    i.addClass('polyfill-placeholder');
-                                    i.val(i.attr('placeholder'));
-                                }
+                    default:
+                        i.val(i.attr('defaultValue'));
+                        break;
+                }
+            });
 
-                                break;
-
-                            default:
-                                i.val(i.attr('defaultValue'));
                                 break;
 
                         }

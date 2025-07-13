@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Evolution of SAP Service: From CRM to the Intelligent Cloud - Venkata R.S</title>
+    <meta name="description" content="Explore the strategic transformation from SAP CRM 7.0 to the intelligent cloud ecosystem led by SAP Service Cloud V2">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" href="../assets/images/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .blog-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: var(--text-inverse);
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+        
+        .blog-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--space-2xl) var(--space-md);
+        }
+        
+        .blog-meta {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.875rem;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .blog-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+        
+        .blog-content h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: var(--space-2xl) 0 var(--space-md);
+        }
+        
+        .blog-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: var(--space-xl) 0 var(--space-md);
+        }
+        
+        .interactive-section {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: var(--space-2xl);
+            margin: var(--space-2xl) 0;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+        
+        .diagram-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xl);
+            margin: var(--space-2xl) 0;
+            flex-wrap: wrap;
+        }
+        
+        .diagram-box {
+            background: var(--bg-primary);
+            padding: var(--space-xl);
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            min-width: 250px;
+        }
+        
+        .cloud-suite {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+        
+        .cloud-item {
+            padding: var(--space-md);
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            justify-content: center;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .filter-btn {
+            padding: var(--space-sm) var(--space-lg);
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--color-accent);
+            color: var(--text-inverse);
+            border-color: var(--color-accent);
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+        
+        .feature-card {
+            background: var(--bg-secondary);
+            padding: var(--space-lg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            margin-bottom: var(--space-md);
+        }
+        
+        .feature-card h4 {
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+        
+        .ai-card {
+            background: var(--bg-primary);
+            padding: var(--space-xl);
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+        
+        .ai-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .migration-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: var(--space-2xl) 0;
+            flex-wrap: wrap;
+            gap: var(--space-lg);
+        }
+        
+        .step {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--color-accent);
+            color: var(--text-inverse);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+            margin: 0 auto var(--space-md);
+        }
+        
+        .chart-container {
+            max-width: 400px;
+            margin: var(--space-xl) auto;
+            height: 300px;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .diagram-container {
+                flex-direction: column;
+            }
+            
+            .blog-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <div class="header__brand">
+                <h1><a href="../index.html">Venkata R.S</a></h1>
+                <p>SAP Architect | AI Consultant | Vedic Practitioner</p>
+            </div>
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../resume.html">Resume</a></li>
+                    <li><a href="../skills.html">Skills</a></li>
+                    <li><a href="../blogs.html" aria-current="page">Tech Blog</a></li>
+                    <li><a href="../personal.html">Veda & Life</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <div class="blog-content">
+                <h1>The Evolution of SAP Service: From CRM to the Intelligent Cloud</h1>
+                <div class="blog-meta">
+                    <time datetime="2025-01-12">January 12, 2025</time> • 
+                    <span>15 min read</span> • 
+                    <span>Category: SAP Architecture</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <main class="blog-content" role="main">
+        <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: var(--space-2xl);">
+            Explore the strategic transformation from the on-premise SAP CRM 7.0 to the agile, intelligent, and interconnected cloud ecosystem, led by SAP Service Cloud V2.
+        </p>
+
+        <div class="interactive-section">
+            <h2>A Fundamental Architectural Shift</h2>
+            <p>The journey from SAP CRM 7.0 is not an upgrade, but a re-platforming from a monolithic system to a composable suite of specialized, best-in-class cloud solutions.</p>
+            
+            <div class="diagram-container">
+                <div class="diagram-box">
+                    <h3 style="color: var(--text-secondary); margin-bottom: var(--space-md);">The Past: Monolithic Core</h3>
+                    <div style="background: var(--bg-secondary); padding: var(--space-xl); border-radius: var(--border-radius); margin-bottom: var(--space-md);">
+                        <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: var(--space-sm);">SAP CRM 7.0</div>
+                        <div style="font-size: 0.875rem; color: var(--text-muted);">(On-Premise)</div>
+                        <div style="margin-top: var(--space-md); text-align: left;">
+                            <div>• Sales</div>
+                            <div>• Service</div>
+                            <div>• Marketing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 3rem; color: var(--color-accent);">→</div>
+                
+                <div class="diagram-box" style="min-width: 400px;">
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">The Future: Composable Cloud Suite</h3>
+                    <div class="cloud-suite">
+                        <div class="cloud-item" style="background: rgba(14, 165, 233, 0.1); color: var(--color-accent);">
+                            <div style="font-weight: bold;">Service Cloud V2</div>
+                            <div style="font-size: 0.75rem;">Customer Engagement</div>
+                        </div>
+                        <div class="cloud-item" style="background: rgba(14, 165, 233, 0.1); color: var(--color-accent);">
+                            <div style="font-weight: bold;">S/4HANA Service</div>
+                            <div style="font-size: 0.75rem;">Core Operations</div>
+                        </div>
+                        <div class="cloud-item" style="background: rgba(76, 29, 149, 0.1); color: var(--color-secondary);">
+                            <div style="font-weight: bold;">Field Service</div>
+                            <div style="font-size: 0.75rem;">On-Site Execution</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: var(--space-lg); padding: var(--space-md); background: rgba(245, 158, 11, 0.1); border-radius: var(--border-radius);">
+                        <div style="font-weight: bold;">SAP Business Technology Platform (BTP)</div>
+                        <div style="font-size: 0.75rem;">Integration & Extensibility Fabric</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-section">
+            <h2>Interactive Functionality Explorer</h2>
+            <p>Discover how key service functionalities from SAP CRM 7.0 are transformed in the new cloud ecosystem. Select a category to begin.</p>
+            
+            <div class="filter-container" id="filter-container">
+                <!-- Filters will be populated by JavaScript -->
+            </div>
+
+            <div class="comparison-grid">
+                <div>
+                    <h3 style="color: var(--text-secondary);">Past: SAP CRM 7.0</h3>
+                    <div id="crm-content">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: var(--color-accent);">Future: SAP Cloud Ecosystem</h3>
+                    <div id="cloud-content">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--border-color);">
+                <h3 style="text-align: center; margin-bottom: var(--space-lg);">Functionality Distribution in the New Ecosystem</h3>
+                <div class="chart-container">
+                    <canvas id="functionalityDonutChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="interactive-section">
+            <h2>Spotlight on the Intelligent Enterprise</h2>
+            <p>Artificial Intelligence is no longer an add-on; it's natively embedded across the SAP service landscape to drive efficiency and create proactive experiences.</p>
+
+            <div class="ai-grid" id="ai-cards-container">
+                <!-- AI cards will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="interactive-section">
+            <h2>Your Path to the Cloud</h2>
+            <p>The transition is a strategic migration project. Following a structured path ensures a smooth and successful transformation.</p>
+            
+            <div class="migration-steps" id="migration-steps-container">
+                <!-- Migration steps will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <h2>Conclusion</h2>
+        <p>The evolution from SAP CRM 7.0 to the intelligent cloud ecosystem represents more than a technology upgrade—it's a fundamental reimagining of how service organizations operate. By embracing this transformation, businesses can unlock new levels of efficiency, intelligence, and customer satisfaction.</p>
+        
+        <p>The future of service is here, and it's powered by the cloud, enhanced by AI, and designed for the modern enterprise.</p>
+    </main>
+
+    <!-- Blog Navigation -->
+    <nav style="background: var(--bg-accent); padding: var(--space-lg) 0; margin-top: var(--space-2xl);">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 var(--space-md); display: flex; justify-content: space-between; align-items: center;">
+            <a href="../blogs.html" style="color: var(--color-accent); font-weight: 500;">← Back to All Posts</a>
+            <a href="../index.html" style="color: var(--color-accent); font-weight: 500;">Home</a>
+        </div>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+                <section class="footer__section">
+                    <h3>Recent Blog Posts</h3>
+                    <ul class="footer__links">
+                        <li><a href="2025-07-01-sap-cx-ai.html">SAP CX + AI: A 2025 Perspective</a></li>
+                        <li><a href="2025-06-28-cdp-personalization.html">Using SAP CDP for Personalization</a></li>
+                        <li><a href="s4hana-fsm-architecture.html">S/4HANA FSM Architecture</a></li>
+                    </ul>
+                </section>
+
+                <section class="footer__section">
+                    <h3>Connect</h3>
+                    <p>
+                        Email: <a href="mailto:sundaragiri@gmail.com">sundaragiri@gmail.com</a><br>
+                        LinkedIn: <a href="https://linkedin.com/in/sundaragiri" target="_blank" rel="noopener">linkedin.com/in/sundaragiri</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+        
+        <div class="footer__copyright">
+            <div class="container">
+                <p>&copy; 2025 Venkata R.S. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/app.js" defer></script>
+    <script>
+        // Interactive functionality data
+        const functionalityData = {
+            'All': {
+                'crm': [{title: 'Select a Category', desc: 'Please select a functionality category above to see how it evolves from SAP CRM 7.0 to the new SAP Cloud Ecosystem.'}],
+                'cloud': [{title: 'The Future Awaits', desc: 'The cloud ecosystem offers specialized, AI-powered solutions for every aspect of customer service.', target: 'Ecosystem'}]
+            },
+            'Core Engagement': {
+                'crm': [
+                    { title: 'Service Request/Ticket', desc: 'Managed through a central object for tracking customer issues, inquiries, and complaints.' },
+                    { title: 'Customer Interaction Center (CIC)', desc: 'A central tool for agents to handle multi-channel communications like phone and email.' },
+                    { title: 'Knowledge Management', desc: 'Basic integration of knowledge articles to help resolve service requests.' },
+                    { title: 'SLA Management', desc: 'Functionality to define and monitor service level agreements for response and resolution times.' }
+                ],
+                'cloud': [
+                    { title: 'Case Management', desc: 'Enhanced with a visual Case Designer, multi-level categories, advanced workflows, and GenAI-powered summaries and responses.', target: 'Service Cloud V2' },
+                    { title: 'Agent Desktop / Customer Hub', desc: 'A completely rebuilt, unified workspace for true omnichannel engagement, reducing clicks and improving agent efficiency.', target: 'Service Cloud V2' },
+                    { title: 'Solution Finder', desc: 'Deep integration with external knowledge bases like SharePoint & Confluence, with AI-powered recommendations.', target: 'Service Cloud V2' },
+                    { title: 'Advanced SLA Timers', desc: 'More flexible and powerful SLA determination using access sequences, integrated directly into case management.', target: 'Service Cloud V2' }
+                ]
+            },
+            'Back-Office Operations': {
+                'crm': [
+                    { title: 'Service Contract Management', desc: 'Handled within CRM to manage long-term service agreements with customers.' },
+                    { title: 'In-House Repair', desc: 'Processes for managing the repair of products at an internal service center.' },
+                    { title: 'Asset Management (IObjects)', desc: 'Used Individual Objects (IObjects) to represent customer assets for service.' }
+                ],
+                'cloud': [
+                    { title: 'Service Contract Management', desc: 'Comprehensive management of contracts, subscriptions, and recurring services with automated billing.', target: 'S/4HANA Service' },
+                    { title: 'In-House Repair', desc: 'End-to-end process management from return to re-shipping, with full cost and revenue transparency in the ERP core.', target: 'S/4HANA Service' },
+                    { title: 'Intelligent Asset Management', desc: 'Uses robust S/4HANA technical objects (Equipment, Functional Locations) enabling predictive maintenance and IoT integration.', target: 'S/4HANA Service' }
+                ]
+            },
+            'Field Service': {
+                'crm': [
+                    { title: 'Field Service', desc: 'Limited capabilities for dispatching technicians, often requiring significant customization or third-party add-ons.' }
+                ],
+                'cloud': [
+                    { title: 'Intelligent Field Service', desc: 'A dedicated, best-in-class solution for the "last mile" of service. Features AI-powered scheduling, optimized routing, and a powerful mobile app for technicians with offline capabilities.', target: 'Field Service Management' }
+                ]
+            }
+        };
+        
+        const aiData = [
+            { icon: '📄', title: 'GenAI Case Summaries', desc: 'Automatically generates concise, accurate summaries of complex case histories, saving agents valuable time.', platform: 'Service Cloud V2' },
+            { icon: '💬', title: 'AI Email Recommendations', desc: 'Suggests complete email replies based on case context and historical data, ensuring consistent and high-quality communication.', platform: 'Service Cloud V2' },
+            { icon: '📈', title: 'Predictive Maintenance', desc: 'Analyzes asset data and IoT sensor readings to predict potential failures before they happen, enabling proactive service.', platform: 'S/4HANA Service' },
+            { icon: '🗺️', title: 'AI-Based Scheduling', desc: 'Optimizes field technician schedules based on skill, location, traffic, and job priority to maximize efficiency.', platform: 'Field Service' },
+            { icon: '🏷️', title: 'Intelligent Case Categorization', desc: 'Uses machine learning to automatically categorize incoming cases, ensuring they are routed to the correct team instantly.', platform: 'Service Cloud V2' },
+            { icon: '🤝', title: 'Sentiment Analysis', desc: 'Detects customer sentiment (e.g., frustration, satisfaction) in real-time from text communications to guide agent interactions.', platform: 'Service Cloud V2' }
+        ];
+
+        const migrationData = [
+            { step: 1, title: 'Readiness Check', desc: 'Assess current CRM system, customizations, and interfaces to understand project scope.' },
+            { step: 2, title: 'Data Migration', desc: 'Utilize SAP tools to cleanly migrate master and transactional data to the new cloud data models.' },
+            { step: 3, title: 'Re-engineering', desc: 'Rebuild necessary custom logic and UIs on BTP to maintain a "clean core" in the new solutions.' },
+            { step: 4, title: 'Integration Setup', desc: 'Configure pre-packaged integrations on BTP to connect the new cloud applications for end-to-end processes.' },
+            { step: 5, title: 'Adoption & Training', desc: 'Implement a phased rollout and comprehensive change management to ensure user adoption and success.' }
+        ];
+
+        let currentFilter = 'All';
+
+        function getTargetColor(target) {
+            switch(target) {
+                case 'Service Cloud V2': return 'var(--color-accent)';
+                case 'S/4HANA Service': return 'var(--color-accent)';
+                case 'Field Service Management': return 'var(--color-secondary)';
+                case 'BTP': return 'var(--color-accent)';
+                default: return 'var(--text-secondary)';
+            }
+        }
+
+        function renderContent() {
+            const data = functionalityData[currentFilter];
+            const crmContent = document.getElementById('crm-content');
+            const cloudContent = document.getElementById('cloud-content');
+
+            crmContent.innerHTML = data.crm.map(item => `
+                <div class="feature-card">
+                    <h4>${item.title}</h4>
+                    <p>${item.desc}</p>
+                </div>
+            `).join('');
+
+            cloudContent.innerHTML = data.cloud.map(item => `
+                <div class="feature-card" style="border-left: 4px solid ${getTargetColor(item.target)};">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--space-sm);">
+                        <h4>${item.title}</h4>
+                        <span style="font-size: 0.75rem; background: var(--bg-accent); padding: 0.25rem 0.5rem; border-radius: 12px; color: var(--text-muted);">${item.target}</span>
+                    </div>
+                    <p>${item.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderFilters() {
+            const filterContainer = document.getElementById('filter-container');
+            filterContainer.innerHTML = Object.keys(functionalityData).map(filter => `
+                <button data-filter="${filter}" class="filter-btn ${filter === currentFilter ? 'active' : ''}">
+                    ${filter}
+                </button>
+            `).join('');
+
+            document.querySelectorAll('.filter-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    currentFilter = e.target.dataset.filter;
+                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    renderContent();
+                });
+            });
+        }
+
+        function renderAiCards() {
+            const aiCardsContainer = document.getElementById('ai-cards-container');
+            aiCardsContainer.innerHTML = aiData.map(item => `
+                <div class="ai-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md);">
+                        <span style="font-size: 2rem;">${item.icon}</span>
+                        <span style="font-size: 0.75rem; background: var(--bg-accent); padding: 0.25rem 0.5rem; border-radius: 12px; color: var(--text-muted);">${item.platform}</span>
+                    </div>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: var(--space-sm);">${item.title}</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.875rem; line-height: 1.5;">${item.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderMigrationSteps() {
+            const migrationStepsContainer = document.getElementById('migration-steps-container');
+            migrationStepsContainer.innerHTML = migrationData.map(item => `
+                <div class="step">
+                    <div class="step-number">${item.step}</div>
+                    <h4 style="font-weight: 600; margin-bottom: var(--space-sm);">${item.title}</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.875rem;">${item.desc}</p>
+                </div>
+            `).join('');
+        }
+        
+        function renderDonutChart() {
+            const ctx = document.getElementById('functionalityDonutChart').getContext('2d');
+            const dataDistribution = {
+                'Service Cloud V2': 0,
+                'S/4HANA Service': 0,
+                'Field Service Management': 0,
+                'BTP': 0,
+            };
+
+            Object.values(functionalityData).forEach(category => {
+                if (category.cloud) {
+                    category.cloud.forEach(item => {
+                        if (dataDistribution.hasOwnProperty(item.target)) {
+                            dataDistribution[item.target]++;
+                        }
+                    });
+                }
+            });
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(dataDistribution),
+                    datasets: [{
+                        label: 'Functionality Distribution',
+                        data: Object.values(dataDistribution),
+                        backgroundColor: [
+                            '#0ea5e9',
+                            '#38bdf8', 
+                            '#4c1d95',
+                            '#f59e0b',
+                        ],
+                        borderColor: '#ffffff',
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                font: { size: 14 }
+                            }
+                        }
+                    },
+                    cutout: '60%'
+                }
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            renderFilters();
+            renderContent();
+            renderAiCards();
+            renderMigrationSteps();
+            renderDonutChart();
+        });
+    </script>
+</body>
+</html>

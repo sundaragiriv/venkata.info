@@ -10,24 +10,56 @@
     const body = document.body;
 
     // Breakpoints.
-    // TODO: Implement a vanilla JavaScript alternative for breakpoints
+    function handleBreakpoints() {
+        const breakpoints = {
+            xlarge: '(max-width: 1680px)',
+            large: '(max-width: 1280px)',
+            medium: '(max-width: 980px)',
+            small: '(max-width: 736px)'
+        };
+
+        for (const [breakpoint, query] of Object.entries(breakpoints)) {
+            const mq = window.matchMedia(query);
+            mq.addListener((e) => {
+                if (e.matches) {
+                    document.body.classList.add(breakpoint);
+                } else {
+                    document.body.classList.remove(breakpoint);
+                }
+            });
+            if (mq.matches) {
+                document.body.classList.add(breakpoint);
+            }
+        }
+    }
+
+    handleBreakpoints();
 
     // Nav.
+
 
     // Title Bar.
     const titleBar = document.createElement('div');
     titleBar.id = 'titleBar';
-    titleBar.innerHTML = `
+    titleBar.innerHTML = ESAPI.encoder().encodeForHTML(`)
 		<a href="#navPanel" class="toggle"></a>
-		<span class="title">${document.getElementById('logo').innerHTML}</span>
+
+		<span class="title"></span>
 	`;
     body.appendChild(titleBar);
 
+    // Set the title content safely
+    const titleSpan = titleBar.querySelector('.title');
+    titleSpan.textContent = document.getElementById('logo').textContent;
+
     // Panel.
     const navPanel = document.createElement('div');
+// amazonq-ignore-next-line
+
     navPanel.id = 'navPanel';
-    navPanel.innerHTML = `
+    navPanel.innerHTML = ESAPI.encoder().encodeForHTML(`)
 		<nav>
+
 			${document.getElementById('nav').innerHTML}
 		</nav>
 	`;

@@ -1,345 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Skills | Venkata R.S | SAP Architect & AI Consultant</title>
-    <meta name="description" content="Technical skills and expertise of Venkata Sundaragiri - SAP CX, S/4HANA, AI/ML, Integration, and Web Development.">
-    <meta name="keywords" content="SAP Skills, CX Expertise, S/4HANA, AI ML, Integration, BTP">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="main.css" />
-    
-    <!-- Favicon -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    
-    <!-- Preload critical fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style">
-    
-    <style>
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        
-        .skill-tile {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border-left: 4px solid #6366f1;
-        }
-        
-        .skill-tile:hover {
-            background-color: rgba(108, 99, 255, 0.02);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .skill-tile h3 {
-            font-size: 1.4em;
-            margin-bottom: 1rem;
-            color: #d12a2a;
-            font-family: 'Yanone Kaffeesatz', sans-serif;
-        }
-        
-        .skill-tile ul {
-            margin: 0;
-        }
-        
-        .skill-tile li {
-            padding: 0.4rem 0;
-            color: #474f51;
-            border-bottom: 1px solid #f0f0f0;
-            transition: color 0.2s ease;
-        }
-        
-        .skill-tile li:last-child {
-            border-bottom: none;
-        }
-        
-        .skill-tile li:hover {
-            color: #d12a2a;
-        }
-        
-        .skill-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 1rem auto;
-            background: rgba(139, 92, 246, 0.05);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .skill-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .stat-item {
-            text-align: center;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #d12a2a;
-            display: block;
-        }
-
-        .stat-label {
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        @media screen and (max-width: 768px) {
-            .skill-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .skill-tile {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skills - Venkata R.S</title>
+    <meta name="description" content="Technical skills and expertise of Venkata R.S - SAP Technologies, AI & Analytics, Integration & Architecture">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
 </head>
-
 <body>
-    <div id="page-wrapper">
-        <!-- Header -->
-        <section id="header">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 d-flex justify-content-between flex-wrap">
-                        <!-- Logo -->
-                        <h1 id="logo">
-                            <a href="index.html" aria-label="Venkata R.S Homepage">Venkata R.S</a>
-                        </h1>
-
-                        <!-- Navigation -->
-                        <nav id="nav" role="navigation" aria-label="Main navigation">
-                            <a href="index.html">Home</a>
-                            <a href="resume.html">Resume</a>
-                            <a href="skills.html" aria-current="page">Skills</a>
-                            <a href="blogs.html">Tech Blog</a>
-                            <a href="personal.html">Veda & Life</a>
-                            <a href="contact.html">Contact</a>
-                        </nav>
-                    </div>
-                </div>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <div class="header__brand">
+                <h1><a href="index.html">Venkata R.S</a></h1>
+                <p>SAP Architect | AI Consultant | Vedic Practitioner</p>
             </div>
-        </section>
-
-        <!-- Content -->
-        <section id="content">
-            <div class="container">
-                <div class="skill-intro">
-                    <h2>Skills & Expertise</h2>
-                    <p>Comprehensive experience across SAP solutions, integration platforms, and emerging AI technologies. 23+ years of delivering enterprise transformation solutions for Fortune 500 companies.</p>
-                </div>
-
-                <div class="skill-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">23+</span>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <div class="stat-label">Projects Delivered</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">15+</span>
-                        <div class="stat-label">SAP Modules</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">10+</span>
-                        <div class="stat-label">Certifications</div>
-                    </div>
-                </div>
-
-                <div class="skill-grid">
-                    <div class="skill-tile">
-                        <h3>🏗️ SAP Functional Architecture</h3>
-                        <ul>
-                            <li>S/4HANA Sales & Distribution (SD)</li>
-                            <li>Materials Management (MM)</li>
-                            <li>Project Systems (PS)</li>
-                            <li>Asset Management & Service</li>
-                            <li>Order-to-Cash (OTC) Processes</li>
-                            <li>Workflow & User Exits</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-tile">
-                        <h3>🎯 SAP CX Transformation</h3>
-                        <ul>
-                            <li>Sales Cloud V2 & Service Cloud V2</li>
-                            <li>Customer Data Cloud (CDC)</li>
-                            <li>Customer Data Platform (CDP)</li>
-                            <li>Emarsys Marketing Automation</li>
-                            <li>Commerce Cloud & Qualtrics</li>
-                            <li>Omnichannel Experience Design</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-tile">
-                        <h3>⚙️ SAP FSM & Edge Solutions</h3>
-                        <ul>
-                            <li>Field Service Management (FSM)</li>
-                            <li>Callidus CPQ & SAP CPQ</li>
-                            <li>IoT Integration & BRIM</li>
-                            <li>Subscription Order Management</li>
-                            <li>Mobile Workforce Solutions</li>
-                            <li>Asset Intelligence Network</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-tile">
-                        <h3>🔗 Integration Platforms</h3>
-                        <ul>
-                            <li>SAP Cloud Platform Integration (CPI)</li>
-                            <li>SAP Business Technology Platform (BTP)</li>
-                            <li>Event Mesh & Open Connectors</li>
-                            <li>REST APIs & Webhooks</li>
-                            <li>Microservices Architecture</li>
-                            <li>End-to-End SAP Integration</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-tile">
-                        <h3>💻 Web Development</h3>
-                        <ul>
-                            <li>HTML5, CSS3, JavaScript ES6+</li>
-                            <li>jQuery & Modern JS Frameworks</li>
-                            <li>JSON & XML Data Processing</li>
-                            <li>Java & JSP Development</li>
-                            <li>Responsive Web Design</li>
-                            <li>Progressive Web Applications</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-tile">
-                        <h3>🤖 AI/ML & Analytics</h3>
-                        <ul>
-                            <li>SAP Joule AI Assistant</li>
-                            <li>SAP CX AI Toolkit</li>
-                            <li>GPTs, Claude, LangChain</li>
-                            <li>Python for Data Science</li>
-                            <li>SAP Analytics Cloud</li>
-                            <li>Vertex AI & LLM Workflows</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-top: 2rem;">
-                    <h3 style="color: #373f42; margin-bottom: 1rem;">Industry Expertise</h3>
-                    <div class="row">
-                        <div class="col-6 col-12-medium">
-                            <ul class="check-list">
-                                <li>Manufacturing & Distribution</li>
-                                <li>Technology & Software</li>
-                                <li>Healthcare & Life Sciences</li>
-                                <li>Retail & Consumer Goods</li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <ul class="check-list">
-                                <li>Energy & Utilities</li>
-                                <li>Financial Services</li>
-                                <li>Professional Services</li>
-                                <li>Construction & Engineering</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-6 col-12-medium">
-                        <section>
-                            <h2>Recent Blog Posts</h2>
-                            <ul class="link-list">
-                                <li><a href="blogs/2025-07-01-sap-cx-ai.html">SAP CX + AI: A 2025 Perspective</a></li>
-                                <li><a href="blogs/2025-06-28-cdp-personalization.html">Using SAP CDP for Real-Time Personalization</a></li>
-                                <li><a href="blogs/2025-06-15-vtp-cloud-integration.html">Mastering SAP CPI for BTP Success</a></li>
-                            </ul>
-                        </section>
-                    </div>
-                    <div class="col-6 col-12-medium">
-                        <section>
-                            <h2>Connect with Me</h2>
-                            <p>
-                                Email: <a href="mailto:sundaragiri@gmail.com">sundaragiri@gmail.com</a><br />
-                                LinkedIn: <a href="https://linkedin.com/in/sundaragiri" target="_blank" rel="noopener noreferrer">linkedin.com/in/sundaragiri</a>
-                            </p>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <div id="copyright">
-            &copy; 2025 Venkata R.S | Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a>
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="skills.html" aria-current="page">Skills</a></li>
+                    <li><a href="blogs.html">Tech Blog</a></li>
+                    <li><a href="personal.html">Veda & Life</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <!-- Scripts -->
-    <script>
-        // Lazy loading for images
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
+    <!-- Content -->
+    <section class="content">
+        <div class="container">
+            <div class="content__grid" style="grid-template-columns: 2fr 1fr;">
+                <article class="content__section">
+                    <header>
+                        <h2>Technical Skills & Expertise</h2>
+                        <h3>23+ Years of Enterprise Technology Leadership</h3>
+                    </header>
 
-            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
+                    <div style="margin-bottom: var(--space-2xl);">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">SAP Technologies</h3>
+                        <ul class="check-list">
+                            <li><strong>SAP CX Suite:</strong> Sales Cloud, Service Cloud, Commerce Cloud, Marketing Cloud</li>
+                            <li><strong>S/4HANA:</strong> Finance, Sales & Distribution, Materials Management</li>
+                            <li><strong>SAP BTP:</strong> Integration Suite, Analytics Cloud, AI Services</li>
+                            <li><strong>Specialized Modules:</strong> FSM, CPQ, Emarsys, CDC, CDP</li>
+                            <li><strong>Development:</strong> ABAP, CAP, UI5, Fiori</li>
+                        </ul>
+                    </div>
 
-        // Skill tile animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+                    <div style="margin-bottom: var(--space-2xl);">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">AI & Analytics</h3>
+                        <ul class="check-list">
+                            <li><strong>SAP AI:</strong> Joule, Conversational AI, Document Intelligence</li>
+                            <li><strong>Analytics:</strong> SAP Analytics Cloud, Embedded Analytics</li>
+                            <li><strong>Machine Learning:</strong> Predictive Analytics, Intelligent Automation</li>
+                            <li><strong>Data Science:</strong> Python, R, Statistical Analysis</li>
+                        </ul>
+                    </div>
 
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+                    <div style="margin-bottom: var(--space-2xl);">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Integration & Architecture</h3>
+                        <ul class="check-list">
+                            <li><strong>SAP CPI:</strong> Cloud Platform Integration, API Management</li>
+                            <li><strong>Event Mesh:</strong> Real-time event processing and streaming</li>
+                            <li><strong>Microservices:</strong> Cloud-native architecture patterns</li>
+                            <li><strong>APIs:</strong> REST, OData, GraphQL integration</li>
+                        </ul>
+                    </div>
 
-        document.querySelectorAll('.skill-tile').forEach(tile => {
-            tile.style.opacity = '0';
-            tile.style.transform = 'translateY(20px)';
-            tile.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            skillObserver.observe(tile);
-        });
-    </script>
+                    <div>
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Leadership & Methodology</h3>
+                        <ul class="check-list">
+                            <li><strong>Project Management:</strong> Agile, SAFe, Design Thinking</li>
+                            <li><strong>Team Leadership:</strong> Cross-functional teams up to 50+ members</li>
+                            <li><strong>Client Engagement:</strong> C-level presentations, stakeholder management</li>
+                            <li><strong>Consciousness-Based Leadership:</strong> Vedic principles in business</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <aside class="content__section">
+                    <div style="margin-bottom: var(--space-2xl);">
+                        <header>
+                            <h2>Certifications</h2>
+                        </header>
+                        <ul class="footer__links">
+                            <li>SAP Certified Solution Architect</li>
+                            <li>SAP CX Specialist</li>
+                            <li>SAP BTP Integration</li>
+                            <li>AI & Machine Learning</li>
+                            <li>Maharishi Ayurveda Consultant</li>
+                            <li>Transcendental Meditation Teacher</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: var(--space-2xl);">
+                        <header>
+                            <h2>Industries</h2>
+                        </header>
+                        <ul class="check-list">
+                            <li>Manufacturing & Automotive</li>
+                            <li>Retail & Consumer Goods</li>
+                            <li>Technology & Software</li>
+                            <li>Healthcare & Life Sciences</li>
+                            <li>Professional Services</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: var(--space-2xl);">
+                        <header>
+                            <h2>Languages</h2>
+                        </header>
+                        <ul class="footer__links">
+                            <li>English (Native)</li>
+                            <li>Telugu (Native)</li>
+                            <li>Hindi (Fluent)</li>
+                            <li>Sanskrit (Reading)</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <header>
+                            <h2>Unique Approach</h2>
+                        </header>
+                        <p style="margin-bottom: var(--space-md);">Combining cutting-edge technology expertise with consciousness-based leadership principles from Vedic tradition.</p>
+                        <a href="personal.html" class="btn btn--primary">Learn More</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+                <section class="footer__section">
+                    <h3>Core Technologies</h3>
+                    <ul class="footer__links">
+                        <li>SAP CX & S/4HANA</li>
+                        <li>AI & Analytics</li>
+                        <li>Integration & BTP</li>
+                    </ul>
+                </section>
+
+                <section class="footer__section">
+                    <h3>Specializations</h3>
+                    <ul class="footer__links">
+                        <li>Enterprise Architecture</li>
+                        <li>Digital Transformation</li>
+                        <li>Conscious Leadership</li>
+                    </ul>
+                </section>
+
+                <section class="footer__section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="blogs.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </section>
+
+                <section class="footer__section">
+                    <h3>Connect</h3>
+                    <p>
+                        Email: <a href="mailto:sundaragiri@gmail.com">sundaragiri@gmail.com</a><br>
+                        LinkedIn: <a href="https://linkedin.com/in/sundaragiri" target="_blank" rel="noopener">linkedin.com/in/sundaragiri</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+        
+        <div class="footer__copyright">
+            <div class="container">
+                <p>&copy; 2025 Venkata R.S. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js" defer></script>
 </body>
 </html>
